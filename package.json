@@ -1,0 +1,14 @@
+{
+  "name": "student-portfolio",
+  "version": "1.0.0",
+  "description": "Student portfolio containing React frontend and Express backend",
+  "scripts": {
+    "dev:backend": "cd portfolio-backend && npm run dev",
+    "dev:frontend": "cd portfolio-react && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "install:all": "npm install && cd portfolio-backend && npm install && cd ../portfolio-react && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,316 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Skills - BTech Portfolio</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#ffb783", "on-secondary-container": "#c4abff", "on-surface": "#e4e1ed", "error-container": "#93000a", "surface-bright": "#393841", "on-primary": "#1000a9", "on-surface-variant": "#c7c4d7", "surface-variant": "#34343d", "on-background": "#e4e1ed", "inverse-primary": "#494bd6", "tertiary-fixed": "#ffdcc5", "background": "#13131b", "error": "#ffb4ab", "primary-container": "#8083ff", "on-secondary-fixed-variant": "#5516be", "primary-fixed-dim": "#c0c1ff", "on-secondary-fixed": "#23005c", "tertiary-container": "#d97721", "surface-container": "#1f1f27", "surface-container-highest": "#34343d", "primary-fixed": "#e1e0ff", "surface-dim": "#13131b", "surface-container-low": "#1b1b23", "outline-variant": "#464554", "inverse-on-surface": "#303038", "primary": "#c0c1ff", "secondary-fixed-dim": "#d0bcff", "on-tertiary-container": "#452000", "surface": "#13131b", "inverse-surface": "#e4e1ed", "on-tertiary-fixed-variant": "#703700", "outline": "#908fa0", "on-primary-container": "#0d0096", "on-primary-fixed-variant": "#2f2ebe", "surface-container-high": "#292932", "on-error-container": "#ffdad6", "surface-container-lowest": "#0d0d15", "on-primary-fixed": "#07006c", "on-secondary": "#3c0091", "on-tertiary-fixed": "#301400", "secondary-container": "#571bc1", "secondary": "#d0bcff", "surface-tint": "#c0c1ff", "on-tertiary": "#4f2500", "tertiary": "#ffb783", "on-error": "#690005", "secondary-fixed": "#e9ddff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "24px", "unit-xs": "4px", "unit-xl": "48px", "margin-mobile": "20px", "unit-sm": "8px", "container-max": "1280px", "unit-lg": "24px", "unit-md": "16px", "margin-desktop": "64px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Poppins"], "display-lg-mobile": ["Poppins"], "body-md": ["Inter"], "code-block": ["JetBrains Mono"], "body-lg": ["Inter"], "headline-md": ["Poppins"], "label-caps": ["Inter"]
+                    },
+                    fontSize: {
+                        "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-lg-mobile": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "code-block": ["14px", { lineHeight: "1.7", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "label-caps": ["12px", { lineHeight: "1.0", letterSpacing: "0.05em", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(31, 31, 39, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(70, 69, 84, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+            border-color: rgba(192, 193, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased pt-16 selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md dark:bg-background/60 border-b border-white/20 dark:border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand -->
+<a href="index.html" class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">BTech Portfolio</a>
+<!-- Links (Desktop) -->
+<ul class="hidden md:flex space-x-unit-lg items-center font-label-caps text-label-caps">
+<li class=""><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-md" href="index.html">Home</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-md" href="projects.html">Projects</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-md" href="certificates.html">Certificates</a></li>
+<li class=""><a class="text-primary font-bold border-b-2 border-primary pb-1 block" href="skills.html">Skills</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-md" href="about.html">About</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-md" href="contact.html">Contact</a></li>
+</ul>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-unit-md">
+<button aria-label="dark_mode" class="hidden md:flex text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<a href="resume.html" aria-label="description" class="hidden md:flex text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90"><span class="material-symbols-outlined">description</span></a>
+<a href="contact.html" class="bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 px-4 py-2 rounded-full font-label-caps text-label-caps uppercase scale-95 active:scale-90 transition-all inline-block">Hire Me</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-container-max w-full mx-auto px-margin-mobile md:px-margin-desktop py-unit-xl flex flex-col gap-unit-xl">
+<!-- Header Section -->
+<header class="text-center md:text-left flex flex-col gap-unit-sm mt-unit-lg">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-inverse-surface">
+                Technical <span class="text-primary">Arsenal</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                A quantitative breakdown of my engineering capabilities, spanning foundational languages to modern frameworks.
+            </p>
+</header>
+<!-- Skills Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Category: Frontend -->
+<section class="glass-panel rounded-xl p-unit-lg flex flex-col gap-unit-md glow-hover transition-all duration-300">
+<div class="flex items-center gap-unit-sm mb-unit-sm">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">web</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-inverse-surface">Frontend Architecture</h2>
+</div>
+<div class="flex flex-col gap-unit-md">
+<!-- Skill Item -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-code-block text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">React.js / Next.js</span>
+<span class="font-code-block text-code-block text-on-surface-variant">90%</span>
+</div>
+<div class="w-full h-2 bg-surface-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-cyan-400 rounded-full w-0 transition-all duration-1000 ease-out fill-bar" data-width="90%" style="width: 90%;"></div>
+</div>
+</div>
+<!-- Skill Item -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-code-block text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">TypeScript</span>
+<span class="font-code-block text-code-block text-on-surface-variant">85%</span>
+</div>
+<div class="w-full h-2 bg-surface-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-cyan-400 rounded-full w-0 transition-all duration-1000 ease-out fill-bar" data-width="85%" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Skill Item -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-code-block text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">Tailwind CSS</span>
+<span class="font-code-block text-code-block text-on-surface-variant">95%</span>
+</div>
+<div class="w-full h-2 bg-surface-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-cyan-400 rounded-full w-0 transition-all duration-1000 ease-out fill-bar" data-width="95%" style="width: 95%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Backend -->
+<section class="glass-panel rounded-xl p-unit-lg flex flex-col gap-unit-md glow-hover transition-all duration-300">
+<div class="flex items-center gap-unit-sm mb-unit-sm">
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-size: 28px;">dns</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-inverse-surface">Backend Systems</h2>
+</div>
+<div class="flex flex-col gap-unit-md">
+<!-- Skill Item -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-code-block text-tertiary bg-tertiary/10 px-3 py-1 rounded-full">Node.js / Express</span>
+<span class="font-code-block text-code-block text-on-surface-variant">80%</span>
+</div>
+<div class="w-full h-2 bg-surface-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary to-primary rounded-full w-0 transition-all duration-1000 ease-out fill-bar" data-width="80%" style="width: 80%;"></div>
+</div>
+</div>
+<!-- Skill Item -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-code-block text-tertiary bg-tertiary/10 px-3 py-1 rounded-full">Python / Django</span>
+<span class="font-code-block text-code-block text-on-surface-variant">75%</span>
+</div>
+<div class="w-full h-2 bg-surface-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary to-primary rounded-full w-0 transition-all duration-1000 ease-out fill-bar" data-width="75%" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Skill Item -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-code-block text-tertiary bg-tertiary/10 px-3 py-1 rounded-full">PostgreSQL / MongoDB</span>
+<span class="font-code-block text-code-block text-on-surface-variant">85%</span>
+</div>
+<div class="w-full h-2 bg-surface-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary to-primary rounded-full w-0 transition-all duration-1000 ease-out fill-bar" data-width="85%" style="width: 85%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Tools & Infrastructure -->
+<section class="glass-panel rounded-xl p-unit-lg flex flex-col gap-unit-md glow-hover transition-all duration-300 lg:col-span-2 xl:col-span-1">
+<div class="flex items-center gap-unit-sm mb-unit-sm">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-size: 28px;">terminal</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-inverse-surface">Infrastructure</h2>
+</div>
+<div class="flex flex-col gap-unit-md">
+<!-- Skill Item -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-code-block text-secondary bg-secondary/10 px-3 py-1 rounded-full">Git &amp; CI/CD</span>
+<span class="font-code-block text-code-block text-on-surface-variant">90%</span>
+</div>
+<div class="w-full h-2 bg-surface-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full w-0 transition-all duration-1000 ease-out fill-bar" data-width="90%" style="width: 90%;"></div>
+</div>
+</div>
+<!-- Skill Item -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-code-block text-secondary bg-secondary/10 px-3 py-1 rounded-full">Docker</span>
+<span class="font-code-block text-code-block text-on-surface-variant">70%</span>
+</div>
+<div class="w-full h-2 bg-surface-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full w-0 transition-all duration-1000 ease-out fill-bar" data-width="70%" style="width: 70%;"></div>
+</div>
+</div>
+<!-- Skill Item -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-code-block text-secondary bg-secondary/10 px-3 py-1 rounded-full">AWS (EC2, S3)</span>
+<span class="font-code-block text-code-block text-on-surface-variant">65%</span>
+</div>
+<div class="w-full h-2 bg-surface-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full w-0 transition-all duration-1000 ease-out fill-bar" data-width="65%" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Learning Journey Section -->
+<section class="mt-unit-xl">
+<h2 class="font-headline-md text-headline-md text-inverse-surface mb-unit-lg flex items-center gap-unit-sm">
+<span class="material-symbols-outlined text-tertiary">route</span> Learning Journey
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-panel p-unit-lg rounded-xl border-l-4 border-l-primary relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">sync</span>
+<h3 class="font-body-lg text-body-lg font-bold text-inverse-surface">Currently Learning</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                        Deep diving into distributed systems and microservices architecture to handle scalable enterprise applications.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="font-code-block text-[12px] text-on-surface bg-surface-highest px-2 py-1 rounded border border-outline-variant/30">Kubernetes</span>
+<span class="font-code-block text-[12px] text-on-surface bg-surface-highest px-2 py-1 rounded border border-outline-variant/30">GraphQL</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-unit-lg rounded-xl border-l-4 border-l-tertiary relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary bg-tertiary/10 p-2 rounded-lg">flag</span>
+<h3 class="font-body-lg text-body-lg font-bold text-inverse-surface">Next Goal</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                        Achieving AWS Certified Solutions Architect credential to validate cloud infrastructure design skills.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="font-code-block text-[12px] text-on-surface bg-surface-highest px-2 py-1 rounded border border-outline-variant/30">Cloud Security</span>
+<span class="font-code-block text-[12px] text-on-surface bg-surface-highest px-2 py-1 rounded border border-outline-variant/30">Serverless</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-unit-xl bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col gap-unit-sm">
+<a href="index.html" class="font-display-lg-mobile text-display-lg-mobile text-on-surface">BTech Portfolio</a>
+<p class="font-body-md text-body-md text-tertiary dark:text-tertiary-fixed opacity-80 hover:opacity-100">
+                    © 2024 Engineering Portfolio. Built with Precision.
+                </p>
+</div>
+<!-- Spacer for grid alignment -->
+<div class="hidden md:block"></div>
+<!-- Links -->
+<div class="flex flex-wrap gap-unit-md md:justify-end items-center font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">LeetCode</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+</div>
+</div>
+</footer>
+<!-- Interactive Script for Skill Bars -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBars = document.querySelectorAll('.fill-bar');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        const targetWidth = bar.getAttribute('data-width');
+                        // Small delay for visual effect
+                        setTimeout(() => {
+                            bar.style.width = targetWidth;
+                        }, 200);
+                        observer.unobserve(bar); // Animate only once
+                    }
+                });
+            }, observerOptions);
+
+            progressBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        });
+    </script>
+
+
+</body></html>

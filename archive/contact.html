@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - BTech Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&family=Poppins:wght@600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-fixed-dim":"#ffb783","on-secondary-container":"#c4abff","on-surface":"#e4e1ed","error-container":"#93000a","surface-bright":"#393841","on-primary":"#1000a9","on-surface-variant":"#c7c4d7","surface-variant":"#34343d","on-background":"#e4e1ed","inverse-primary":"#494bd6","tertiary-fixed":"#ffdcc5","background":"#13131b","error":"#ffb4ab","primary-container":"#8083ff","on-secondary-fixed-variant":"#5516be","primary-fixed-dim":"#c0c1ff","on-secondary-fixed":"#23005c","tertiary-container":"#d97721","surface-container":"#1f1f27","surface-container-highest":"#34343d","primary-fixed":"#e1e0ff","surface-dim":"#13131b","surface-container-low":"#1b1b23","outline-variant":"#464554","inverse-on-surface":"#303038","primary":"#c0c1ff","secondary-fixed-dim":"#d0bcff","on-tertiary-container":"#452000","surface":"#13131b","inverse-surface":"#e4e1ed","on-tertiary-fixed-variant":"#703700","outline":"#908fa0","on-primary-container":"#0d0096","on-primary-fixed-variant":"#2f2ebe","surface-container-high":"#292932","on-error-container":"#ffdad6","surface-container-lowest":"#0d0d15","on-primary-fixed":"#07006c","on-secondary":"#3c0091","on-tertiary-fixed":"#301400","secondary-container":"#571bc1","secondary":"#d0bcff","surface-tint":"#c0c1ff","on-tertiary":"#4f2500","tertiary":"#ffb783","on-error":"#690005","secondary-fixed":"#e9ddff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"24px","unit-xs":"4px","unit-xl":"48px","margin-mobile":"20px","unit-sm":"8px","container-max":"1280px","unit-lg":"24px","unit-md":"16px","margin-desktop":"64px"},"fontFamily":{"display-lg":["Poppins"],"display-lg-mobile":["Poppins"],"body-md":["Inter"],"code-block":["JetBrains Mono"],"body-lg":["Inter"],"headline-md":["Poppins"],"label-caps":["Inter"]},"fontSize":{"display-lg":["48px",{"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg-mobile":["32px",{"lineHeight":"1.2","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"1.5","fontWeight":"400"}],"code-block":["14px",{"lineHeight":"1.7","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"1.3","fontWeight":"600"}],"label-caps":["12px",{"lineHeight":"1.0","letterSpacing":"0.05em","fontWeight":"600"}]}}}}
+</script>
+<style>
+  .glass-panel{background:rgba(31,31,39,0.4);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.08);border-top:1px solid rgba(255,255,255,0.12);border-left:1px solid rgba(255,255,255,0.12);}
+  .primary-glow{box-shadow:0 0 40px rgba(192,193,255,0.25);}
+  .hover-lift{transition:transform 0.4s cubic-bezier(0.16,1,0.3,1),box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);}
+  .hover-lift:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 20px 40px -10px rgba(0,0,0,0.5),0 0 20px rgba(192,193,255,0.1);}
+  @keyframes slideUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+  .animate-slide-up{animation:slideUp 0.6s cubic-bezier(0.16,1,0.3,1) forwards;}
+  @keyframes pop-in{0%{transform:scale(0);opacity:0;}70%{transform:scale(1.15);}100%{transform:scale(1);opacity:1;}}
+  .pop-in{animation:pop-in 0.4s ease forwards;}
+  @keyframes spin-icon{to{transform:rotate(360deg);}}
+  .spin-icon{animation:spin-icon 1s linear infinite;display:inline-block;}
+  #page-loader{position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s ease;}
+  #page-loader.done{opacity:0;pointer-events:none;}
+  #page-loader .ring{width:44px;height:44px;border:3px solid rgba(192,193,255,0.15);border-top-color:#c0c1ff;border-radius:50%;animation:spin-icon 0.8s linear infinite;}
+  .anim-fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.65s cubic-bezier(0.16,1,0.3,1),transform 0.65s cubic-bezier(0.16,1,0.3,1);}
+  .anim-fade-up.visible{opacity:1;transform:translateY(0);}
+  .nav-scrolled{box-shadow:0 4px 24px rgba(0,0,0,0.45)!important;}
+  #scroll-top{position:fixed;bottom:1.5rem;right:1.5rem;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#c0c1ff,#8b5cf6);color:#1000a9;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:all 0.3s ease;z-index:999;}
+  #scroll-top.visible{opacity:1;visibility:visible;transform:translateY(0);}
+  .mac-dot{height:12px;width:12px;border-radius:50%;display:inline-block;}
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container relative overflow-x-hidden">
+
+<!-- Background -->
+<div class="fixed inset-0 pointer-events-none z-0 opacity-40">
+  <div class="absolute top-[20%] right-[10%] w-[40%] h-[40%] rounded-full bg-primary/20 blur-[140px] mix-blend-screen"></div>
+  <div class="absolute bottom-[10%] left-[10%] w-[30%] h-[30%] rounded-full bg-secondary/20 blur-[120px] mix-blend-screen"></div>
+</div>
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+  <a class="font-display-lg-mobile text-[24px] font-bold text-on-surface hover:text-primary transition-colors" href="index.html">BTech Portfolio</a>
+  <div class="hidden md:flex space-x-unit-lg items-center">
+    <a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="index.html">Home</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="projects.html">Projects</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="certificates.html">Certificates</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="skills.html">Skills</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="coding.html">Coding</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="research.html">Research</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="about.html">About</a>
+    <a class="text-primary font-bold border-b-2 border-primary pb-1 px-3 py-2 font-label-caps text-label-caps" href="contact.html">Contact</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <!-- FIX #8: onclick added -->
+    <button onclick="toggleDarkMode()" class="hidden md:flex text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-primary-container/10">
+      <span class="material-symbols-outlined">dark_mode</span>
+    </button>
+    <a class="hidden md:flex text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-primary-container/10" href="resume.html">
+      <span class="material-symbols-outlined">description</span>
+    </a>
+    <a class="bg-primary/10 text-primary border border-primary/30 font-label-caps text-label-caps px-5 py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all duration-300 flex items-center justify-center" href="contact.html">Hire Me</a>
+    <!-- FIX #9: Mobile menu button -->
+    <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-on-surface">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="fixed inset-0 z-[60] hidden">
+<div class="absolute inset-0 bg-background/90 backdrop-blur-md" onclick="toggleMobileMenu()"></div>
+<div class="absolute right-0 top-0 h-full w-72 bg-surface-container border-l border-outline-variant/30 flex flex-col p-6 pt-20" style="background:#1f1f27;">
+  <button onclick="toggleMobileMenu()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+  <a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="index.html">Home</a>
+  <a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="projects.html">Projects</a>
+  <a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="certificates.html">Certificates</a>
+  <a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="skills.html">Skills</a>
+  <a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="coding.html">Coding</a>
+  <a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="research.html">Research</a>
+  <a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="about.html">About</a>
+  <a class="text-primary font-bold py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="contact.html">Contact</a>
+  <a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="resume.html">Resume</a>
+  <a href="contact.html" class="mt-6 bg-primary text-on-primary px-4 py-3 rounded-lg font-label-caps text-label-caps text-center hover:bg-primary-fixed transition-all">Hire Me</a>
+</div>
+</div>
+
+<main class="flex-grow pt-32 pb-unit-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full relative z-10">
+
+  <!-- Header -->
+  <header class="mb-unit-xl animate-slide-up text-center md:text-left">
+    <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-4">Initialize Connection</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+      Whether you have a complex engineering problem to solve, a project proposal, or just want to network — let's compile some ideas together.
+    </p>
+    <div class="mt-6 inline-flex items-center gap-3 bg-surface-container/50 border border-outline-variant/30 rounded-full px-4 py-2 glass-panel">
+      <span class="relative flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary"></span>
+      </span>
+      <span class="font-code-block text-code-block text-tertiary-fixed-dim">Status: Available for new opportunities</span>
+    </div>
+  </header>
+
+  <!-- Two Column Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mt-12">
+
+    <!-- Left: Contact Cards -->
+    <div class="lg:col-span-5 flex flex-col gap-unit-md animate-slide-up" style="animation-delay:0.1s;">
+
+      <!-- Email -->
+      <a class="glass-panel rounded-2xl p-6 hover-lift flex items-center gap-4 group bg-surface-container/30" href="mailto:giripradiptachandra@gmail.com">
+        <div class="p-4 bg-surface-container-high text-primary rounded-xl border border-white/5 shadow-inner">
+          <span class="material-symbols-outlined text-2xl">mail</span>
+        </div>
+        <div>
+          <h3 class="font-headline-md text-headline-md text-on-surface text-lg mb-1">Email Protocol</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant opacity-80">giripradiptachandra@gmail.com</p>
+        </div>
+      </a>
+
+      <!-- Location -->
+      <div class="glass-panel rounded-2xl p-6 flex flex-col gap-4 relative overflow-hidden group hover-lift bg-surface-container/30">
+        <div class="flex items-center gap-4 relative z-10">
+          <div class="p-4 bg-surface-container-high text-tertiary rounded-xl border border-white/5 shadow-inner">
+            <span class="material-symbols-outlined text-2xl">location_on</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-headline-md text-on-surface text-lg mb-1">Coordinates</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant opacity-80" style="font-size: 0.85rem;">VSSUT, Burla, Sambalpur, Odisha</p>
+          </div>
+        </div>
+        <div class="h-48 w-full rounded-xl bg-surface-container-lowest border border-white/5 relative overflow-hidden mt-2 z-10">
+          <div id="map" class="w-full h-full" style="background-color: #13131b; z-index: 1;"></div>
+          <div class="absolute inset-0 pointer-events-none border border-white/10 rounded-xl z-[400]"></div>
+        </div>
+      </div>
+
+      <!-- Social Grid -->
+      <div class="grid grid-cols-2 gap-unit-md">
+        <a class="glass-panel rounded-2xl p-6 hover-lift flex flex-col items-center justify-center gap-4 text-center group bg-surface-container/30"
+           href="https://www.linkedin.com/in/pradipta-chandra-giri-035b88340/" target="_blank" rel="noopener noreferrer">
+          <div class="text-primary group-hover:scale-110 transition-transform bg-surface-container-high p-4 rounded-xl border border-white/5 shadow-inner">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </div>
+          <span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary transition-colors">LinkedIn</span>
+        </a>
+        <a class="glass-panel rounded-2xl p-6 hover-lift flex flex-col items-center justify-center gap-4 text-center group bg-surface-container/30"
+           href="https://github.com/PradiptaChandraGiri" target="_blank" rel="noopener noreferrer">
+          <div class="text-on-surface group-hover:text-white group-hover:scale-110 transition-all bg-surface-container-high p-4 rounded-xl border border-white/5 shadow-inner">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-white transition-colors">GitHub</span>
+        </a>
+      </div>
+
+      <!-- Availability -->
+      <div class="glass-panel rounded-2xl p-6 bg-surface-container/30 border border-primary/20">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10b981] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-[#10b981]"></span>
+          </span>
+          <span class="font-label-caps text-label-caps text-[#10b981] uppercase tracking-wider">Open to Opportunities</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-code-block text-[10px]">SDE Internships</span>
+          <span class="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-code-block text-[10px]">Research Roles</span>
+          <span class="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-code-block text-[10px]">Open Source</span>
+          <span class="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-code-block text-[10px]">Freelance</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="lg:col-span-7 animate-slide-up relative" style="animation-delay:0.2s;">
+      <div class="absolute inset-0 bg-primary/10 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+      <div class="sticky top-24 glass-panel rounded-2xl p-[1px] bg-gradient-to-b from-white/10 to-white/5 shadow-2xl relative z-10 overflow-hidden">
+        <div class="bg-[#1e1e24] rounded-2xl overflow-hidden h-full">
+          <!-- Terminal Header -->
+          <div class="bg-[#18181c] px-4 py-3 border-b border-white/5 flex items-center gap-2">
+            <span class="mac-dot bg-[#ff5f56]"></span>
+            <span class="mac-dot bg-[#ffbd2e]"></span>
+            <span class="mac-dot bg-[#27c93f]"></span>
+            <span class="ml-4 font-code-block text-code-block text-outline-variant text-xs opacity-70">~/contact.sh — Pradipta Chandra Giri</span>
+          </div>
+
+          <div class="p-6 md:p-8">
+            <!-- FIX #7: Form now POSTs to real backend API -->
+            <form class="flex flex-col gap-6" id="contactForm" onsubmit="event.preventDefault(); submitContactForm();">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Name -->
+                <div class="flex flex-col gap-2">
+                  <label class="font-label-caps text-label-caps text-on-surface-variant text-[11px] tracking-wider" for="name">System.User.Name</label>
+                  <div class="relative">
+                    <span class="material-symbols-outlined absolute left-3 top-3.5 text-outline-variant">person</span>
+                    <input class="w-full bg-[#13131b] border border-white/10 rounded-xl py-3.5 pl-10 pr-4 text-on-surface font-body-md text-body-md focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all outline-none placeholder:text-outline-variant/50 shadow-inner"
+                           id="name" placeholder="Your Name" required type="text" autocomplete="name"/>
+                  </div>
+                  <span class="text-error font-label-caps text-[10px] hidden" id="name-err"></span>
+                </div>
+                <!-- Email -->
+                <div class="flex flex-col gap-2">
+                  <label class="font-label-caps text-label-caps text-on-surface-variant text-[11px] tracking-wider" for="email">System.User.Email</label>
+                  <div class="relative">
+                    <span class="material-symbols-outlined absolute left-3 top-3.5 text-outline-variant">alternate_email</span>
+                    <input class="w-full bg-[#13131b] border border-white/10 rounded-xl py-3.5 pl-10 pr-4 text-on-surface font-body-md text-body-md focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all outline-none placeholder:text-outline-variant/50 shadow-inner"
+                           id="email" placeholder="your@email.com" required type="email" autocomplete="email"/>
+                  </div>
+                  <span class="text-error font-label-caps text-[10px] hidden" id="email-err"></span>
+                </div>
+              </div>
+
+              <!-- Subject -->
+              <div class="flex flex-col gap-2">
+                <label class="font-label-caps text-label-caps text-on-surface-variant text-[11px] tracking-wider" for="subject">Request_Type</label>
+                <div class="relative">
+                  <select class="w-full bg-[#13131b] border border-white/10 rounded-xl py-3.5 px-4 text-on-surface font-body-md text-body-md focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all outline-none appearance-none cursor-pointer shadow-inner" id="subject">
+                    <option value="Job Opportunity">Job / Internship Opportunity</option>
+                    <option value="Collaboration">Research / Project Collaboration</option>
+                    <option value="Technical Consulting">Technical Consulting</option>
+                    <option value="Open Source">Open Source Contribution</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                  </select>
+                  <span class="material-symbols-outlined absolute right-3 top-3.5 text-outline-variant pointer-events-none">expand_more</span>
+                </div>
+              </div>
+
+              <!-- Message -->
+              <div class="flex flex-col gap-2">
+                <label class="font-label-caps text-label-caps text-on-surface-variant text-[11px] tracking-wider" for="message">Payload_Data</label>
+                <textarea class="w-full bg-[#13131b] border border-white/10 rounded-xl py-3.5 px-4 text-on-surface font-body-md text-body-md focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all outline-none placeholder:text-outline-variant/50 resize-none shadow-inner"
+                          id="message" placeholder="Execute your message here..." required rows="5"></textarea>
+                <span class="text-error font-label-caps text-[10px] hidden" id="message-err"></span>
+              </div>
+
+              <!-- Submit -->
+              <button class="bg-gradient-to-r from-primary to-primary-container text-on-primary font-label-caps text-label-caps py-4 rounded-xl hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 mt-4 primary-glow group overflow-hidden relative shadow-lg shadow-primary/20 disabled:opacity-60 disabled:cursor-not-allowed"
+                      id="submitBtn" type="submit">
+                <span class="relative z-10 flex items-center gap-2 font-bold tracking-wide" id="btnContent">
+                  Execute Post Request
+                  <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+                </span>
+              </button>
+
+              <!-- Rate limit / server error message -->
+              <div id="form-error" class="hidden rounded-lg bg-error-container/20 border border-error/30 px-4 py-3 font-code-block text-code-block text-error/80 text-center"></div>
+            </form>
+
+            <!-- Success State -->
+            <div class="hidden flex-col items-center justify-center py-12 text-center" id="successState">
+              <div class="w-16 h-16 rounded-full bg-tertiary-container/20 flex items-center justify-center mb-4 text-tertiary border border-tertiary/30 shadow-[0_0_20px_rgba(255,183,131,0.2)]">
+                <span class="material-symbols-outlined text-4xl pop-in">check_circle</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Transmission Successful</h3>
+              <p class="font-code-block text-code-block text-on-surface-variant max-w-sm mb-1">
+                Status 200 OK. Your message has been delivered.
+              </p>
+              <p class="font-code-block text-code-block text-primary text-[11px]">
+                I'll reply to giripradiptachandra@gmail.com within 24 hours.
+              </p>
+              <button class="mt-6 px-6 py-2 border border-outline-variant rounded-lg font-label-caps text-label-caps text-on-surface hover:bg-surface-bright transition-colors" onclick="resetContactForm()">
+                Initialize New Request
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest w-full py-unit-xl border-t border-white/10 relative z-10 mt-unit-xl">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-unit-lg">
+    <div class="flex flex-col gap-3">
+      <a href="index.html" class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent w-fit">BTech Portfolio</a>
+      <p class="font-body-md text-body-md text-on-surface-variant opacity-60 max-w-xs">AI & Machine Learning Enthusiast | Full-Stack Developer</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <span class="font-label-caps text-label-caps text-primary uppercase tracking-wider mb-1">Quick Links</span>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 w-fit" href="projects.html">Projects</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 w-fit" href="certificates.html">Certificates</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 w-fit" href="research.html">Research</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 w-fit" href="contact.html">Contact</a>
+    </div>
+    <div class="flex flex-col gap-2">
+      <span class="font-label-caps text-label-caps text-primary uppercase tracking-wider mb-1">Connect</span>
+      <a href="https://github.com/PradiptaChandraGiri" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 flex items-center gap-2 w-fit"><span class="material-symbols-outlined text-sm">code</span>GitHub</a>
+      <a href="https://www.linkedin.com/in/pradipta-chandra-giri-035b88340/" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 flex items-center gap-2 w-fit"><span class="material-symbols-outlined text-sm">work</span>LinkedIn</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 flex items-center gap-2 w-fit"><span class="material-symbols-outlined text-sm">tag</span>Twitter / X</a>
+      <a href="https://leetcode.com/Pradipta_Chadnra_Giri" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 flex items-center gap-2 w-fit"><span class="material-symbols-outlined text-sm">psychology</span>LeetCode</a>
+    </div>
+  </div>
+  <div class="border-t border-white/10 pt-unit-md flex flex-col md:flex-row items-center justify-between gap-2">
+    <p class="font-label-caps text-label-caps text-on-surface-variant opacity-50">© 2024 Pradipta Chandra Giri. Built with ❤️ and Precision.</p>
+    <div class="flex gap-4">
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary opacity-50 hover:opacity-100" href="#">Privacy</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary opacity-50 hover:opacity-100" href="#">Terms</a>
+    </div>
+  </div>
+</div>
+</footer>
+
+<button id="scroll-top" title="Back to top">
+  <span class="material-symbols-outlined" style="font-size:20px">arrow_upward</span>
+</button>
+
+<script>
+/* ─── CONFIGURATION ───────────────────────────────────────────
+   FIX #7: Set your Railway backend URL here.
+   Change to your Railway URL after deploying.
+────────────────────────────────────────────────────────────── */
+const BACKEND_URL = 'http://localhost:5000/api'; /* ← change after Railway deploy */
+/* e.g.: const BACKEND_URL = 'https://portfolio-backend-xxxx.up.railway.app/api'; */
+
+/* ── Shared utilities ── */
+(function(){ const s=localStorage.getItem('theme'); document.documentElement.classList.toggle('dark',s!=='light'); })();
+function toggleDarkMode(){ const d=document.documentElement.classList.toggle('dark'); localStorage.setItem('theme',d?'dark':'light'); }
+function toggleMobileMenu(){ const m=document.getElementById('mobile-menu'); if(!m)return; const h=m.classList.toggle('hidden'); document.body.style.overflow=h?'':'hidden'; }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ const m=document.getElementById('mobile-menu'); if(m&&!m.classList.contains('hidden'))toggleMobileMenu(); } });
+
+document.addEventListener('DOMContentLoaded',()=>{
+  /* Page loader */
+  let loader=document.getElementById('page-loader');
+  if(!loader){ loader=document.createElement('div'); loader.id='page-loader'; loader.innerHTML='<div class="ring"></div>'; document.body.prepend(loader); }
+  window.addEventListener('load',()=>{ setTimeout(()=>loader&&loader.classList.add('done'),400); setTimeout(()=>loader&&loader.remove(),950); });
+  /* Navbar shadow */
+  const nav=document.querySelector('nav');
+  if(nav) window.addEventListener('scroll',()=>nav.classList.toggle('nav-scrolled',window.scrollY>20),{passive:true});
+  /* Scroll top */
+  const sb=document.getElementById('scroll-top');
+  if(sb){ sb.onclick=()=>window.scrollTo({top:0,behavior:'smooth'}); window.addEventListener('scroll',()=>sb.classList.toggle('visible',window.scrollY>400),{passive:true}); }
+  /* Scroll reveal */
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0.07,rootMargin:'0px 0px -36px 0px'});
+  document.querySelectorAll('.anim-fade-up').forEach(el=>obs.observe(el));
+
+  /* Live validation on blur */
+  document.getElementById('name')?.addEventListener('blur',()=>validateField('name',v=>v.length>=2,'Name must be at least 2 characters.'));
+  document.getElementById('email')?.addEventListener('blur',()=>validateField('email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),'Please enter a valid email address.'));
+  document.getElementById('message')?.addEventListener('blur',()=>validateField('message',v=>v.length>=10,'Message too short (minimum 10 characters).'));
+});
+
+/* ── Validation ── */
+function validateField(id, test, errMsg) {
+  const el  = document.getElementById(id);
+  const err = document.getElementById(id+'-err');
+  if (!el) return true;
+  const ok = test(el.value.trim());
+  el.style.borderColor = ok ? '' : '#ef4444';
+  el.style.boxShadow   = ok ? '' : '0 0 0 2px rgba(239,68,68,0.15)';
+  if (err) { err.textContent=ok?'':errMsg; err.classList.toggle('hidden',ok); }
+  return ok;
+}
+
+/* ── FIX #7: Real API submit ── */
+async function submitContactForm() {
+  const name    = document.getElementById('name').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value.trim();
+
+  /* Validate */
+  const v1 = validateField('name',    v=>v.length>=2,                         'Name is required (min 2 chars).');
+  const v2 = validateField('email',   v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),'Valid email address required.');
+  const v3 = validateField('message', v=>v.length>=10,                         'Please write a message (min 10 chars).');
+  if (!v1||!v2||!v3) return;
+
+  const btn        = document.getElementById('submitBtn');
+  const btnContent = document.getElementById('btnContent');
+  const form       = document.getElementById('contactForm');
+  const success    = document.getElementById('successState');
+  const formError  = document.getElementById('form-error');
+
+  formError.classList.add('hidden');
+  btn.disabled = true;
+  btnContent.innerHTML = `<span class="spin-icon material-symbols-outlined">sync</span> Sending...`;
+
+  try {
+    const res  = await fetch(BACKEND_URL + '/contact', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ name, email, subject, message }),
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+      /* Handle rate limit specifically */
+      if (res.status === 429) throw new Error('Too many messages. Please wait an hour before sending again, or email directly at giripradiptachandra@gmail.com');
+      throw new Error(data.error || 'Message delivery failed. Please try again.');
+    }
+
+    /* ✅ SUCCESS */
+    form.style.display = 'none';
+    success.classList.remove('hidden');
+    success.classList.add('flex');
+    success.style.cssText = 'opacity:0;transform:translateY(16px);transition:all 0.4s ease;display:flex!important;';
+    requestAnimationFrame(()=>{ success.style.opacity='1'; success.style.transform='translateY(0)'; });
+
+  } catch (err) {
+    btn.disabled = false;
+    btnContent.innerHTML = `<span class="relative z-10 flex items-center gap-2 font-bold tracking-wide">Execute Post Request <span class="material-symbols-outlined">send</span></span>`;
+    formError.textContent = '⚠️ ' + err.message;
+    formError.classList.remove('hidden');
+  }
+}
+
+function resetContactForm() {
+  const form    = document.getElementById('contactForm');
+  const btn     = document.getElementById('submitBtn');
+  const success = document.getElementById('successState');
+  const btnCont = document.getElementById('btnContent');
+  if (!form) return;
+  form.reset();
+  form.style.display = '';
+  success.classList.add('hidden');
+  success.classList.remove('flex');
+  btn.disabled = false;
+  btnCont.innerHTML = `<span class="flex items-center gap-2 font-bold tracking-wide">Execute Post Request <span class="material-symbols-outlined">send</span></span>`;
+  document.getElementById('form-error').classList.add('hidden');
+}
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize the map. [21.4973, 83.9040] is VSSUT, Burla
+    const map = L.map('map', {
+        center: [21.4973, 83.9040],
+        zoom: 4, // Slightly zoomed in since it's a specific university
+        minZoom: 2,
+        zoomControl: false // Hide zoom controls for a cleaner dashboard look
+    });
+
+    // Light themed tiles (CartoDB Positron) for better visibility
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        subdomains: 'abcd',
+        maxZoom: 20
+    }).addTo(map);
+
+    // Add a subtle marker for the location
+    L.circleMarker([21.4973, 83.9040], {
+        color: '#1000a9', // matches Tailwind 'on-primary' color for contrast on light map
+        fillColor: '#494bd6', // matches 'inverse-primary'
+        fillOpacity: 1,
+        radius: 6
+    }).addTo(map);
+  });
+</script>
+
+</body></html>

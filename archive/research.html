@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Research &amp; Publications - BTech Portfolio</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-secondary-container": "#c4abff",
+                        "on-surface": "#e4e1ed",
+                        "error-container": "#93000a",
+                        "surface-bright": "#393841",
+                        "on-primary": "#1000a9",
+                        "on-surface-variant": "#c7c4d7",
+                        "surface-variant": "#34343d",
+                        "on-background": "#e4e1ed",
+                        "inverse-primary": "#494bd6",
+                        "tertiary-fixed": "#ffdcc5",
+                        "background": "#13131b",
+                        "error": "#ffb4ab",
+                        "primary-container": "#8083ff",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-secondary-fixed": "#23005c",
+                        "tertiary-container": "#d97721",
+                        "surface-container": "#1f1f27",
+                        "surface-container-highest": "#34343d",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-dim": "#13131b",
+                        "surface-container-low": "#1b1b23",
+                        "outline-variant": "#464554",
+                        "inverse-on-surface": "#303038",
+                        "primary": "#c0c1ff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "on-tertiary-container": "#452000",
+                        "surface": "#13131b",
+                        "inverse-surface": "#e4e1ed",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "outline": "#908fa0",
+                        "on-primary-container": "#0d0096",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface-container-high": "#292932",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0d0d15",
+                        "on-primary-fixed": "#07006c",
+                        "on-secondary": "#3c0091",
+                        "on-tertiary-fixed": "#301400",
+                        "secondary-container": "#571bc1",
+                        "secondary": "#d0bcff",
+                        "surface-tint": "#c0c1ff",
+                        "on-tertiary": "#4f2500",
+                        "tertiary": "#ffb783",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e9ddff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit-xs": "4px",
+                        "unit-xl": "48px",
+                        "margin-mobile": "20px",
+                        "unit-sm": "8px",
+                        "container-max": "1280px",
+                        "unit-lg": "24px",
+                        "unit-md": "16px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Poppins"],
+                        "display-lg-mobile": ["Poppins"],
+                        "body-md": ["Inter"],
+                        "code-block": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Poppins"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "code-block": ["14px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background-color: rgba(19, 19, 27, 0.6); /* surface with opacity */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 30px rgba(192, 193, 255, 0.2); /* primary color glow */
+        }
+        /* Custom scrollbar for modal */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(199, 196, 215, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(199, 196, 215, 0.5); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md selection:bg-primary/30 selection:text-primary">
+<!-- TopNavBar Shared Component -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md border-b border-white/20 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent truncate pr-4" href="index.html">BTech Portfolio</a>
+<!-- Desktop Navigation Links -->
+<div class="hidden md:flex items-center gap-unit-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="projects.html">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="certificates.html">Certificates</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="skills.html">Skills</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="coding.html">Coding</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 px-3 py-2 font-label-caps text-label-caps" href="research.html">Research</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md font-label-caps text-label-caps" href="contact.html">Contact</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-unit-md">
+<button onclick="toggleDarkMode()" aria-label="dark_mode" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full text-on-surface-variant hover:bg-primary-container/10 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<a aria-label="resume" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full text-on-surface-variant hover:bg-primary-container/10 transition-all duration-300 scale-95 active:scale-90" href="resume.html"><span class="material-symbols-outlined">description</span></a>
+<a class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2 rounded-lg hover:shadow-[0_0_20px_rgba(192,193,255,0.4)] transition-all duration-300 scale-95 active:scale-90 uppercase tracking-wide text-center" href="contact.html">Hire Me</a>
+</div>
+<!-- Mobile Menu Toggle (Simplified) -->
+<button onclick="toggleMobileMenu()" class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[60] hidden">
+<div class="absolute inset-0 bg-background/90 backdrop-blur-md" onclick="toggleMobileMenu()"></div>
+<div class="absolute right-0 top-0 h-full w-72 bg-surface-container border-l border-outline-variant/30 flex flex-col p-6 pt-20" style="background:#1f1f27;">
+<button onclick="toggleMobileMenu()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="projects.html">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="certificates.html">Certificates</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="skills.html">Skills</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="coding.html">Coding</a>
+<a class="text-primary font-bold py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="research.html">Research</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="contact.html">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="resume.html">Resume</a>
+<a href="contact.html" class="mt-6 bg-primary text-on-primary px-4 py-3 rounded-lg font-label-caps text-label-caps text-center hover:bg-primary-fixed transition-all">Hire Me</a>
+</div>
+</div>
+
+<main class="flex-grow pt-32 pb-unit-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Section Header -->
+<header class="mb-unit-xl">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-unit-sm">
+                Research &amp; Publications
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+                Exploring the intersection of deep learning and distributed systems. A collection of peer-reviewed papers, preprints, and academic investigations aimed at advancing robust architectural patterns.
+            </p>
+<button onclick="toggleMobileMenu()" class="md:hidden p-2 text-on-surface z-50 relative"><span class="material-symbols-outlined">menu</span></button>
+</header>
+<!-- Research List (Bento/Card Layout) -->
+<div class="flex flex-col gap-unit-lg">
+<!-- Card 1: Published Paper -->
+<article class="glass-panel rounded-xl relative overflow-hidden flex flex-col md:flex-row gap-unit-md p-unit-lg group transition-all duration-300 hover:-translate-y-1 glow-hover border border-white/10">
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-primary to-primary/40"></div>
+<div class="flex-grow flex flex-col justify-between relative z-10">
+<div>
+<div class="flex flex-wrap items-center gap-unit-sm mb-unit-sm">
+<span class="bg-primary/10 text-primary font-code-block text-[10px] px-3 py-1 rounded-full border border-primary/20 flex items-center gap-2 uppercase tracking-widest">
+<span class="material-symbols-outlined text-[14px] font-bold">verified</span> Published
+        </span>
+<span class="text-on-surface-variant font-code-block text-xs opacity-60">2023</span>
+<span class="ml-auto flex items-center gap-1 text-primary/60 font-code-block text-[10px] uppercase tracking-tighter">
+<span class="material-symbols-outlined text-[14px]">format_quote</span> 42 Citations
+        </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors leading-tight">
+        Federated Learning Approaches for Privacy-Preserving IoT Networks
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-1">
+<span class="text-on-surface font-semibold">Pradipta Chandra Giri (Me)</span>, Dr. Sarah Jenkins, Michael O'Connor
+      </p>
+<p class="font-body-md text-body-md text-tertiary italic mb-unit-md">
+        IEEE Transactions on Industrial Informatics
+      </p>
+<div class="mb-unit-md">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-widest focus:outline-none group/btn" onclick="toggleAbstract('abs-1')">
+<span class="text-[10px]">Abstract</span>
+<span class="material-symbols-outlined transition-transform duration-500 text-[18px]" id="abs-1-icon">expand_more</span>
+</button>
+<div class="hidden mt-unit-sm font-body-md text-body-md text-on-surface-variant bg-surface-container-low/50 backdrop-blur-sm p-unit-md rounded-lg border border-outline-variant/20 leading-relaxed transition-all duration-500" id="abs-1">
+          This paper proposes a novel federated learning architecture tailored for resource-constrained Internet of Things (IoT) devices. By implementing a selective weight-sharing mechanism and differential privacy constraints, we demonstrate a 40% reduction in communication overhead while maintaining model accuracy within 2% of centralized baselines.
+        </div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-unit-sm mt-4 md:mt-0 border-t border-outline-variant/10 pt-unit-md">
+<button class="bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 font-label-caps text-[10px] uppercase tracking-widest px-5 py-2 rounded-lg flex items-center gap-2 transition-all active:scale-95" onclick="openModal('pdf-modal')">
+<span class="material-symbols-outlined text-[16px]">menu_book</span> Read Paper
+      </button>
+<a class="text-on-surface-variant hover:text-on-surface border border-outline-variant/20 hover:border-outline-variant/40 font-label-caps text-[10px] uppercase tracking-widest px-4 py-2 rounded-lg flex items-center gap-2 transition-all" href="#">
+<span class="material-symbols-outlined text-[16px]">link</span> DOI
+      </a>
+<a class="text-on-surface-variant hover:text-on-surface border border-outline-variant/20 hover:border-outline-variant/40 font-label-caps text-[10px] uppercase tracking-widest px-4 py-2 rounded-lg flex items-center gap-2 transition-all" href="#">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span> arXiv
+      </a>
+</div>
+</div>
+<div class="hidden md:block w-48 shrink-0 relative rounded-lg overflow-hidden border border-white/5 opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-[1.02]">
+<div class="bg-cover bg-center w-full h-full min-h-[150px]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhKfGpKErcKRjq9gpdEI7GR3vmXmZwjeBdYWXIBjEMZTa6mrRx0DH9NGzs_r7zVBoA13ZWAcifJwN9ZbMAs7aU1LjJAnKyZurAqUcPBzH3sKqRCzLRdq5OIeZR5sTbx3jNmq-8Ay48VTFhn2cw-x9g1Hl4UeO6M7so2eaMs1-VQXXhNKCsh5EMrb_40NjivVwN741zLUeB8o5AFfw-2F7y_Ma25eLEpoAEC5TRwxHG7OE-K3uFPGG15EnyYnoiNe0n7u8VtE7b2Gg')"></div>
+</div>
+</article>
+<!-- Card 2: Preprint Paper -->
+<article class="glass-panel rounded-xl relative overflow-hidden flex flex-col md:flex-row gap-unit-md p-unit-lg group transition-all duration-300 hover:-translate-y-1 glow-hover border border-white/10">
+<div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image: linear-gradient(45deg, currentColor 25%, transparent 25%, transparent 75%, currentColor 75%, currentColor), linear-gradient(45deg, currentColor 25%, transparent 25%, transparent 75%, currentColor 75%, currentColor); background-size: 40px 40px; background-position: 0 0, 20px 20px;"></div>
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-tertiary to-tertiary/40"></div>
+<div class="flex-grow flex flex-col justify-between relative z-10">
+<div>
+<div class="flex flex-wrap items-center gap-unit-sm mb-unit-sm">
+<span class="bg-tertiary/10 text-tertiary font-code-block text-[10px] px-3 py-1 rounded-full border border-tertiary/20 flex items-center gap-2 uppercase tracking-widest">
+<span class="material-symbols-outlined text-[14px]">pending</span> Preprint
+        </span>
+<span class="text-on-surface-variant font-code-block text-xs opacity-60">2024</span>
+<span class="ml-auto flex items-center gap-1 text-tertiary/60 font-code-block text-[10px] uppercase tracking-tighter">
+<span class="material-symbols-outlined text-[14px]">visibility</span> 1.2k Views
+        </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-tertiary transition-colors leading-tight">
+        Optimizing Microservice Latency via Predictive Autoscaling using Transformer Models
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-1">
+<span class="text-on-surface font-semibold">Pradipta Chandra Giri (Me)</span>, David Kim
+      </p>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-unit-md opacity-80">
+        Submitted to ACM Symposium on Cloud Computing (SoCC)
+      </p>
+<div class="mb-unit-md">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-tertiary transition-colors font-label-caps text-label-caps uppercase tracking-widest focus:outline-none group/btn" onclick="toggleAbstract('abs-2')">
+<span class="text-[10px]">Abstract</span>
+<span class="material-symbols-outlined transition-transform duration-500 text-[18px]" id="abs-2-icon">expand_more</span>
+</button>
+<div class="hidden mt-unit-sm font-body-md text-body-md text-on-surface-variant bg-surface-container-low/50 backdrop-blur-sm p-unit-md rounded-lg border border-outline-variant/20 leading-relaxed transition-all duration-500" id="abs-2">
+          Reactive autoscaling in cloud-native microservices often suffers from 'cold start' latency spikes during sudden traffic bursts. We introduce an intelligent scaling orchestrator utilizing a lightweight Transformer-based time-series forecasting model.
+        </div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-unit-sm mt-4 md:mt-0 border-t border-outline-variant/10 pt-unit-md">
+<button class="bg-tertiary/10 hover:bg-tertiary/20 text-tertiary border border-tertiary/20 font-label-caps text-[10px] uppercase tracking-widest px-5 py-2 rounded-lg flex items-center gap-2 transition-all active:scale-95" onclick="openModal('pdf-modal')">
+<span class="material-symbols-outlined text-[16px]">description</span> Read Draft
+      </button>
+<a class="text-on-surface-variant hover:text-on-surface border border-outline-variant/20 hover:border-outline-variant/40 font-label-caps text-[10px] uppercase tracking-widest px-4 py-2 rounded-lg flex items-center gap-2 transition-all" href="#">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span> arXiv
+      </a>
+</div>
+</div>
+<div class="hidden md:block w-48 shrink-0 relative rounded-lg overflow-hidden border border-white/5 opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-[1.02]">
+<div class="bg-cover bg-center w-full h-full min-h-[150px]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNm3OnlYJZIONXYFhjsTBkTTZY5hJR_NIYkyziwllQbsyxgpCsjipzCOMH2ESCrmS1XDU04MJ9CuM3n6Q-uVvXLEBmm9ylw6pYV2UdraMMgpYQzjGJNPYYPpiyQZndjwujqfwI7SNWcYCuK7t3mlBE2B9aNP3Uy0wtDL_A6mJRWp-BMAKyMB6DrKaffMI4LEjAEtuPmSzQNu1G5ZJhU4IQBTLffAggR7qCnYOxiMo5K86PDNqQ2qe8N_SIgyZGyqRLvEOJPowDtco')"></div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-lowest w-full py-unit-xl border-t border-white/10 relative z-10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-unit-lg">
+    <!-- Brand -->
+    <div class="flex flex-col gap-3">
+      <a href="index.html" class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent w-fit">BTech Portfolio</a>
+      <p class="font-body-md text-body-md text-on-surface-variant opacity-60 max-w-xs">AI & Machine Learning Enthusiast | Full-Stack Developer</p>
+    </div>
+    <!-- Quick Links -->
+    <div class="flex flex-col gap-2">
+      <span class="font-label-caps text-label-caps text-primary uppercase tracking-wider mb-1">Quick Links</span>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 hover:-translate-y-0.5 transform transition-transform w-fit" href="projects.html">Projects</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 hover:-translate-y-0.5 transform transition-transform w-fit" href="certificates.html">Certificates</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 hover:-translate-y-0.5 transform transition-transform w-fit" href="research.html">Research</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 hover:-translate-y-0.5 transform transition-transform w-fit" href="contact.html">Contact</a>
+    </div>
+    <!-- Social Links -->
+    <div class="flex flex-col gap-2">
+      <span class="font-label-caps text-label-caps text-primary uppercase tracking-wider mb-1">Connect</span>
+      <a href="https://github.com/PradiptaChandraGiri" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 hover:-translate-y-0.5 transform transition-transform flex items-center gap-2 w-fit">
+        <span class="material-symbols-outlined text-sm">code</span>GitHub</a>
+      <a href="https://www.linkedin.com/in/pradipta-chandra-giri-035b88340/" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 hover:-translate-y-0.5 transform transition-transform flex items-center gap-2 w-fit">
+        <span class="material-symbols-outlined text-sm">work</span>LinkedIn</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 hover:-translate-y-0.5 transform transition-transform flex items-center gap-2 w-fit">
+        <span class="material-symbols-outlined text-sm">tag</span>Twitter / X</a>
+      <a href="https://leetcode.com/Pradipta_Chadnra_Giri" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 hover:-translate-y-0.5 transform transition-transform flex items-center gap-2 w-fit">
+        <span class="material-symbols-outlined text-sm">psychology</span>LeetCode</a>
+    </div>
+  </div>
+  <div class="border-t border-white/10 pt-unit-md flex flex-col md:flex-row items-center justify-between gap-2">
+    <p class="font-label-caps text-label-caps text-on-surface-variant opacity-50 text-center">© 2024 Pradipta Chandra Giri. Built with ❤️ and Precision.</p>
+    <div class="flex gap-4">
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-50 hover:opacity-100" href="#">Privacy</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-50 hover:opacity-100" href="#">Terms</a>
+    </div>
+  </div>
+</div>
+</footer>
+<!-- PDF Modal Overlay -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 md:p-12" id="pdf-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-background/80 backdrop-blur-sm transition-opacity" onclick="closeModal('pdf-modal')"></div>
+<!-- Modal Content (Simulated PDF Viewer) -->
+<div class="relative w-full max-w-5xl h-[870px] bg-surface-container border border-outline-variant/30 rounded-xl shadow-2xl flex flex-col overflow-hidden transform transition-transform scale-100">
+<!-- Modal Header -->
+<div class="flex justify-between items-center p-4 border-b border-outline-variant/30 bg-surface">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">picture_as_pdf</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Paper_Preview.pdf</h3>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1 rounded-full hover:bg-surface-bright" onclick="closeModal('pdf-modal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body (Dummy Content) -->
+<div class="flex-grow bg-surface-container-lowest p-8 overflow-y-auto flex justify-center">
+<div class="w-full max-w-3xl bg-white text-black p-12 shadow-md">
+<!-- Simulating a standard academic paper layout -->
+<div class="text-center mb-8">
+<h1 class="text-2xl font-bold font-serif mb-4">Federated Learning Approaches for Privacy-Preserving IoT Networks</h1>
+<p class="text-sm font-serif mb-1">Pradipta Chandra Giri, Dr. Sarah Jenkins, Michael O'Connor</p>
+<p class="text-xs font-serif italic text-gray-600">Department of Computer Science, State University</p>
+</div>
+<div class="mb-6">
+<h2 class="text-sm font-bold uppercase mb-2">Abstract</h2>
+<p class="text-sm font-serif leading-relaxed text-justify">
+                            This paper proposes a novel federated learning architecture tailored for resource-constrained Internet of Things (IoT) devices. By implementing a selective weight-sharing mechanism and differential privacy constraints, we demonstrate a 40% reduction in communication overhead while maintaining model accuracy within 2% of centralized baselines...
+                        </p>
+</div>
+<div class="grid grid-cols-2 gap-6 text-sm font-serif text-justify leading-relaxed">
+<div>
+<h2 class="font-bold uppercase mb-2">I. Introduction</h2>
+<p class="mb-4">The proliferation of Internet of Things (IoT) devices has led to an exponential increase in data generation at the network edge. Traditional centralized machine learning paradigms require transmitting raw data to cloud servers, raising significant privacy concerns and encountering bandwidth limitations.</p>
+<p class="">Federated Learning (FL) emerges as a promising paradigm to address these challenges by training models locally on client devices and only exchanging model updates.</p>
+</div>
+<div>
+<p class="mb-4">However, applying FL to IoT environments presents unique hurdles, primarily due to the severe resource constraints (compute, memory, battery) of edge devices and the high heterogeneity of data distribution.</p>
+<p class="">In this work, we propose a specialized FL framework that incorporates a lightweight differential privacy mechanism paired with an adaptive compression scheme tailored for intermittent connectivity.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Scripts -->
+<script>
+        function toggleAbstract(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                // Small delay to allow display block to apply before opacity transition if we wanted to animate it
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                const modal = document.getElementById('pdf-modal');
+                if (!modal.classList.contains('hidden')) {
+                    closeModal('pdf-modal');
+                }
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+<script>
+/* ── RESEARCH — load from backend ── */
+const _API = 'http://localhost:5000/api';
+async function _loadResearch() {
+  const list = document.querySelector('.flex.flex-col.gap-unit-lg, main .flex.flex-col');
+  if (!list) return;
+  try {
+    const r = await fetch(_API + '/research');
+    const d = await r.json();
+    if (!d.success || !d.data.length) return; /* Keep static demo cards */
+    const STATUS_COLOR = { Published:'text-primary bg-primary/10 border-primary/20', 'Under Review':'text-tertiary bg-tertiary/10 border-tertiary/20', Preprint:'text-secondary bg-secondary/10 border-secondary/20' };
+    const accentColor  = { Published:'from-primary to-primary/40', 'Under Review':'from-tertiary to-tertiary/40', Preprint:'from-secondary to-secondary/40' };
+    list.innerHTML = d.data.map(p => `
+      <article class="glass-panel rounded-xl relative overflow-hidden flex flex-col md:flex-row gap-unit-md p-unit-lg group transition-all duration-300 hover:-translate-y-1 border border-white/10">
+        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${accentColor[p.status]||accentColor.Published}"></div>
+        <div class="flex-grow flex flex-col relative z-10">
+          <div class="flex flex-wrap items-center gap-unit-sm mb-unit-sm">
+            <span class="font-code-block text-[10px] px-3 py-1 rounded-full border ${STATUS_COLOR[p.status]||STATUS_COLOR.Published} uppercase tracking-widest">${p.status}</span>
+            <span class="text-on-surface-variant font-code-block text-xs opacity-60">${p.year||''}</span>
+            ${p.citation_count ? `<span class="ml-auto font-code-block text-[10px] text-primary/60">${p.citation_count} Citations</span>` : ''}
+          </div>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-2">${p.title}</h2>
+          <p class="font-body-md text-on-surface-variant mb-1">${(p.authors||[]).join(', ')}</p>
+          ${p.journal ? `<p class="font-body-md text-tertiary italic mb-unit-md">${p.journal}</p>` : ''}
+          ${p.abstract ? `<details class="mb-unit-md"><summary class="font-label-caps text-label-caps text-on-surface-variant cursor-pointer hover:text-primary transition-colors uppercase tracking-widest">Abstract</summary><p class="mt-2 font-body-md text-on-surface-variant bg-surface-container-low/50 p-unit-md rounded-lg border border-outline-variant/20">${p.abstract}</p></details>` : ''}
+          <div class="flex flex-wrap items-center gap-unit-sm border-t border-outline-variant/10 pt-unit-md">
+            ${p.pdf_url ? `<button class="bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 font-label-caps text-[10px] uppercase tracking-widest px-5 py-2 rounded-lg flex items-center gap-2 transition-all" onclick="window.open('${p.pdf_url}','_blank')"><span class="material-symbols-outlined text-[16px]">menu_book</span>Read Paper</button>` : ''}
+            ${p.doi ? `<a class="text-on-surface-variant hover:text-on-surface border border-outline-variant/20 font-label-caps text-[10px] uppercase px-4 py-2 rounded-lg flex items-center gap-2" href="https://doi.org/${p.doi}" target="_blank"><span class="material-symbols-outlined text-[16px]">link</span>DOI</a>` : ''}
+            ${p.arxiv_url ? `<a class="text-on-surface-variant hover:text-on-surface border border-outline-variant/20 font-label-caps text-[10px] uppercase px-4 py-2 rounded-lg flex items-center gap-2" href="${p.arxiv_url}" target="_blank"><span class="material-symbols-outlined text-[16px]">open_in_new</span>arXiv</a>` : ''}
+          </div>
+        </div>
+      </article>
+    `).join('');
+  } catch(e) { console.warn('Research load failed', e); }
+}
+document.addEventListener('DOMContentLoaded', _loadResearch);
+</script>
+
+<!-- ============================================================
+     SHARED.JS
+     ============================================================ -->
+<script>
+/* ── 1. DARK MODE (single definition, no duplicates) ── */
+(function () {
+  const saved = localStorage.getItem('theme');
+  document.documentElement.classList.toggle('dark', saved !== 'light');
+})();
+
+function toggleDarkMode() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  /* Rotate the icon */
+  const icon = document.querySelector('[data-darkmode-icon]');
+  if (icon) icon.style.transform = isDark ? 'rotate(360deg)' : 'rotate(0deg)';
+}
+
+/* ── 2. MOBILE MENU ── */
+function toggleMobileMenu() {
+  const m = document.getElementById('mobile-menu');
+  if (!m) return;
+  const isHidden = m.classList.toggle('hidden');
+  document.body.style.overflow = isHidden ? '' : 'hidden';
+}
+/* Close mobile menu on ESC */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const m = document.getElementById('mobile-menu');
+    if (m && !m.classList.contains('hidden')) toggleMobileMenu();
+  }
+});
+
+/* ── 3. ALL ANIMATIONS & UTILITIES ── */
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* Inject animation styles */
+  const style = document.createElement('style');
+  style.textContent = `
+    /* Scroll reveal */
+    .anim-fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.65s cubic-bezier(0.16,1,0.3,1);
+    }
+    .anim-fade-up.visible { opacity: 1; transform: translateY(0); }
+    .anim-fade-up:nth-child(2) { transition-delay: 0.08s; }
+    .anim-fade-up:nth-child(3) { transition-delay: 0.16s; }
+    .anim-fade-up:nth-child(4) { transition-delay: 0.24s; }
+    .anim-fade-up:nth-child(5) { transition-delay: 0.32s; }
+    .anim-fade-up:nth-child(6) { transition-delay: 0.40s; }
+
+    /* Page loader */
+    #page-loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #0b0f1a;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.5s ease;
+    }
+    #page-loader.done { opacity: 0; pointer-events: none; }
+    #page-loader .ring {
+      width: 44px; height: 44px;
+      border: 3px solid rgba(192,193,255,0.15);
+      border-top-color: #c0c1ff;
+      border-radius: 50%;
+      animation: spin-ring 0.8s linear infinite;
+    }
+    @keyframes spin-ring { to { transform: rotate(360deg); } }
+
+    /* Counter */
+    .counter-val { display: inline-block; }
+
+    /* Shake (admin login) */
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-5px); }
+      80% { transform: translateX(5px); }
+    }
+    .shake { animation: shake 0.45s ease; }
+
+    /* Pop-in (contact success) */
+    @keyframes pop-in {
+      0% { transform: scale(0); opacity: 0; }
+      70% { transform: scale(1.15); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .pop-in { animation: pop-in 0.4s ease forwards; }
+
+    /* Skeleton shimmer */
+    .skeleton {
+      background: linear-gradient(90deg, #1f1f27 25%, #292932 50%, #1f1f27 75%);
+      background-size: 800px 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 8px;
+    }
+    @keyframes shimmer {
+      0% { background-position: -400px 0; }
+      100% { background-position: 400px 0; }
+    }
+
+    /* Orb float */
+    @keyframes float-orb {
+      0%,100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-22px) scale(1.05); }
+    }
+    .orb-float  { animation: float-orb  8s ease-in-out infinite; }
+    .orb-float-2{ animation: float-orb 10s ease-in-out infinite 2s; }
+    .orb-float-3{ animation: float-orb 12s ease-in-out infinite 4s; }
+
+    /* Skill bars */
+    .skill-bar-fill {
+      width: 0 !important;
+      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+    .skill-bar-fill.animated { width: var(--target-w) !important; }
+
+    /* Navbar scroll shadow */
+    .nav-scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.45) !important; }
+
+    /* Scroll to top button */
+    #scroll-top {
+      position: fixed; bottom: 1.5rem; right: 1.5rem;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #c0c1ff, #8b5cf6);
+      color: #1000a9;
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 4px 16px rgba(192,193,255,0.35);
+    }
+    #scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    #scroll-top:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(192,193,255,0.5); }
+
+    /* Dark mode toggle spin */
+    button[onclick="toggleDarkMode()"] span {
+      display: inline-block;
+      transition: transform 0.6s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    button[onclick="toggleDarkMode()"]:active span {
+      transform: rotate(360deg);
+    }
+  `;
+  document.head.appendChild(style);
+
+  /* ── PAGE LOADER ── */
+  let loader = document.getElementById('page-loader');
+  if (!loader) {
+    loader = document.createElement('div');
+    loader.id = 'page-loader';
+    loader.innerHTML = '<div class="ring"></div>';
+    document.body.prepend(loader);
+  }
+  window.addEventListener('load', () => {
+    setTimeout(() => loader && loader.classList.add('done'), 400);
+    setTimeout(() => loader && loader.remove(), 950);
+  });
+
+  /* ── SCROLL REVEAL ── */
+  const revealTargets = document.querySelectorAll(
+    'article, section > div, .glass-panel, [class*="rounded-xl"]'
+  );
+  revealTargets.forEach(el => {
+    if (!el.closest('nav') && !el.closest('header') &&
+        !el.closest('#mobile-menu') && !el.closest('#page-loader')) {
+      el.classList.add('anim-fade-up');
+    }
+  });
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
+  document.querySelectorAll('.anim-fade-up').forEach(el => revealObs.observe(el));
+
+  /* ── NAVBAR SCROLL SHADOW ── */
+  const nav = document.querySelector('header, nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 20);
+    }, { passive: true });
+  }
+
+  /* ── ANIMATED COUNTERS ── */
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.target || el.innerText, 10);
+      const suffix = el.dataset.suffix || '';
+      if (isNaN(target)) return;
+      const start = performance.now();
+      const duration = 1400;
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(ease * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      counterObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter-val').forEach(el => counterObs.observe(el));
+
+  /* ── SKILL BARS ── */
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const w = e.target.style.width || e.target.dataset.width || '0%';
+        e.target.style.setProperty('--target-w', w);
+        e.target.style.width = '0';
+        setTimeout(() => e.target.classList.add('skill-bar-fill', 'animated'), 50);
+        barObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.fill-bar, .skill-bar-fill, [data-width]').forEach(b => barObs.observe(b));
+
+  /* ── SCROLL TO TOP ── */
+  let scrollBtn = document.getElementById('scroll-top');
+  if (!scrollBtn) {
+    scrollBtn = document.createElement('button');
+    scrollBtn.id = 'scroll-top';
+    scrollBtn.title = 'Back to top';
+    scrollBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size:20px">arrow_upward</span>';
+    scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.body.appendChild(scrollBtn);
+  }
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+}); /* end DOMContentLoaded */
+</script>
+
+</body></html>

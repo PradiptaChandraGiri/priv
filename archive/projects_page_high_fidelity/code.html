@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects - BTech Portfolio</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Poppins:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind CSS & Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-lowest": "#0d0d15",
+                "on-primary-fixed-variant": "#2f2ebe",
+                "on-error-container": "#ffdad6",
+                "on-tertiary-fixed-variant": "#703700",
+                "surface-container": "#1f1f27",
+                "surface-variant": "#34343d",
+                "primary-fixed-dim": "#c0c1ff",
+                "tertiary-container": "#d97721",
+                "on-error": "#690005",
+                "secondary": "#d0bcff",
+                "surface-bright": "#393841",
+                "error": "#ffb4ab",
+                "on-primary-container": "#0d0096",
+                "secondary-fixed": "#e9ddff",
+                "primary-container": "#8083ff",
+                "on-tertiary-fixed": "#301400",
+                "surface-container-highest": "#34343d",
+                "outline": "#908fa0",
+                "on-secondary-fixed-variant": "#5516be",
+                "tertiary": "#ffb783",
+                "secondary-fixed-dim": "#d0bcff",
+                "on-background": "#e4e1ed",
+                "inverse-surface": "#e4e1ed",
+                "on-surface-variant": "#c7c4d7",
+                "primary-fixed": "#e1e0ff",
+                "on-secondary-container": "#c4abff",
+                "tertiary-fixed": "#ffdcc5",
+                "on-tertiary-container": "#452000",
+                "inverse-on-surface": "#303038",
+                "background": "#13131b",
+                "surface-container-low": "#1b1b23",
+                "surface": "#13131b",
+                "on-surface": "#e4e1ed",
+                "surface-container-high": "#292932",
+                "on-secondary-fixed": "#23005c",
+                "tertiary-fixed-dim": "#ffb783",
+                "on-secondary": "#3c0091",
+                "on-primary-fixed": "#07006c",
+                "inverse-primary": "#494bd6",
+                "surface-dim": "#13131b",
+                "on-primary": "#1000a9",
+                "error-container": "#93000a",
+                "secondary-container": "#571bc1",
+                "on-tertiary": "#4f2500",
+                "surface-tint": "#c0c1ff",
+                "primary": "#c0c1ff",
+                "outline-variant": "#464554"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "unit-md": "16px",
+                "container-max": "1280px",
+                "unit-xl": "48px",
+                "margin-desktop": "64px",
+                "unit-xs": "4px",
+                "unit-lg": "24px",
+                "unit-sm": "8px",
+                "margin-mobile": "20px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "display-lg": [
+                        "Poppins"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "code-block": [
+                        "JetBrains Mono"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "display-lg-mobile": [
+                        "Poppins"
+                ],
+                "headline-md": [
+                        "Poppins"
+                ]
+        },
+        "fontSize": {
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "code-block": [
+                        "14px",
+                        {
+                                "lineHeight": "1.7",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand -->
+<div class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                BTech Portfolio
+            </div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center gap-unit-lg">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md scale-95 active:scale-90 transition-transform" href="index.html">Home</a>
+<!-- Active Nav Item -->
+<a class="font-label-caps text-label-caps text-primary font-bold border-b-2 border-primary pb-1 px-3 py-2 hover:bg-primary-container/10 transition-all duration-300 scale-95 active:scale-90" href="projects.html">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md scale-95 active:scale-90 transition-transform" href="certificates.html">Certificates</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md scale-95 active:scale-90 transition-transform" href="skills.html">Skills</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md scale-95 active:scale-90 transition-transform" href="about.html">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md scale-95 active:scale-90 transition-transform" href="contact.html">Contact</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-unit-md">
+<div class="flex items-center gap-unit-sm text-primary">
+<button class="p-2 rounded-full hover:bg-primary-container/10 transition-colors scale-95 active:scale-90">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button class="p-2 rounded-full hover:bg-primary-container/10 transition-colors scale-95 active:scale-90">
+<span class="material-symbols-outlined">description</span>
+</button>
+</div>
+<a class="hidden md:block bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2 rounded-full uppercase font-semibold hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(192,193,255,0.3)] text-center" href="contact.html">Hire Me</a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden p-2 text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-[100px] pb-unit-xl relative">
+<!-- Atmospheric ambient glows -->
+<div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
+<div class="fixed bottom-0 right-1/4 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
+<!-- Page Header -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-unit-xl relative z-10">
+<div class="bg-surface-container/40 backdrop-blur-xl rounded-xl p-unit-lg md:p-unit-xl relative overflow-hidden border border-white/10 shadow-2xl">
+<!-- Decorative background elements -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<nav class="flex items-center gap-2 mb-unit-sm text-on-surface-variant font-label-caps text-label-caps uppercase">
+<a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<span class="material-symbols-outlined" style="font-size: 16px;">chevron_right</span>
+<span class="text-primary">Projects</span>
+</nav>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-unit-sm">
+                        Engineering Portfolio
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        A showcase of technical implementations, algorithmic solutions, and system designs ranging from web applications to machine learning models.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Filter Bar -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-unit-lg relative z-10">
+<div class="flex items-center gap-unit-sm overflow-x-auto pb-4 hide-scrollbar border-b border-white/10">
+<button class="whitespace-nowrap px-5 py-2 rounded-full font-label-caps text-label-caps uppercase bg-primary/20 text-primary border border-primary/30 backdrop-blur-md transition-all shadow-[0_0_15px_rgba(192,193,255,0.15)]">All Projects</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full font-label-caps text-label-caps uppercase bg-white/5 text-on-surface-variant border border-white/10 hover:bg-white/10 backdrop-blur-md transition-all">Web Dev</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full font-label-caps text-label-caps uppercase bg-white/5 text-on-surface-variant border border-white/10 hover:bg-white/10 backdrop-blur-md transition-all">Machine Learning</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full font-label-caps text-label-caps uppercase bg-white/5 text-on-surface-variant border border-white/10 hover:bg-white/10 backdrop-blur-md transition-all">Systems / C++</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full font-label-caps text-label-caps uppercase bg-white/5 text-on-surface-variant border border-white/10 hover:bg-white/10 backdrop-blur-md transition-all">Mobile</button>
+</div>
+</section>
+<!-- Projects Grid Container -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<!-- Dynamic Grid Structure -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="projects-grid">
+<!-- Project Card 1 -->
+<div class="group relative bg-surface-container/30 backdrop-blur-xl rounded-xl border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col h-full cursor-pointer" onclick="openModal('modal-1')">
+<div class="h-48 w-full overflow-hidden relative">
+<img class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" data-alt="A highly complex and detailed dark mode dashboard interface for a distributed systems monitoring tool. It features glowing neon purple and blue network graphs, real-time data streaming charts, and terminal-like log outputs. The aesthetic is extremely cyber-technical, sleek, and professional, bathed in low-light ambient glows indicative of a high-end engineering workstation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArGDbFRTLxxWjUCpkccRv_TDFw0ZqIol8ojOQ_ppqag6imfsNTNOjv-mmQm_biYg5SiUqxoi2FQYRezJx10BD_sfp3CRNKGCWnpDvVYtDgV9jNX1zutIprnnTzngalK7Sk3Drjoqi56TR5vXgx7Uw4fVaPRbLhLssglZYqbbTNBucGWft8of5fuhXioPCVk7LIktvI93W4uC_j_oOvwK-N5nN65ewLrOqe0VCoZQb4soVxK3UAIPFKo4U3rQIRUoboOJCyEqiA2AE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container/90 via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+<span class="font-label-caps text-label-caps text-tertiary uppercase">Systems</span>
+</div>
+</div>
+<div class="p-unit-md flex-grow flex flex-col relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Distributed Task Scheduler</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">
+                            A highly concurrent, fault-tolerant distributed task scheduling system written in Go. Utilizes Raft consensus for high availability and gRPC for inter-node communication.
+                        </p>
+<div class="mt-auto flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">Golang</span>
+<span class="px-2 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full font-code-block text-[10px] uppercase">gRPC</span>
+<span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">Docker</span>
+</div>
+<div class="flex items-center justify-between border-t border-white/10 pt-3 mt-auto">
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-label-caps text-label-caps" href="#" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined" style="font-size: 18px;">code</span> Repo
+                            </a>
+<span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
+<span class="material-symbols-outlined">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group relative bg-surface-container/30 backdrop-blur-xl rounded-xl border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col h-full cursor-pointer" onclick="openModal('modal-1')">
+<div class="h-48 w-full overflow-hidden relative">
+<img class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" data-alt="A clean, modern e-commerce web application interface shown on a floating laptop screen against a dark studio background. The UI features crisp typography, large minimalist product imagery, and a sleek, intuitive shopping cart sidebar. The overall mood is premium, refined, and highly functional, highlighting polished front-end engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxFG3p6Jsv43N2OZc4MHDAeQamE-zg2FFw4zGy7F8mFUMCBOJOvOhQyRqgDuViE9RO0yMwimlahgFvU3mfcbLeIDidvv7nU0ZtJjzOABM6jZjOQ54GFMi7_MNGqaJOhghqpNYrOM2PAJ0gvhxHSA49oQLNGH4ShprGl_e19AjEsB5hWpOmWIRiVeJpE7oEiTRzzgvQIPpyXqTOYJx6KW_ckmLfspvtCrE_yzJyi3aqdLZozXwet3dElsSvKH9D-CUcV0aCCnxMplQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container/90 via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+<span class="font-label-caps text-label-caps text-primary uppercase">Web Dev</span>
+</div>
+</div>
+<div class="p-unit-md flex-grow flex flex-col relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">OmniCommerce Platform</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">
+                            A full-stack e-commerce solution with real-time inventory tracking, secure Stripe integration, and a custom headless CMS backend built with Node.js and PostgreSQL.
+                        </p>
+<div class="mt-auto flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">React</span>
+<span class="px-2 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full font-code-block text-[10px] uppercase">Node.js</span>
+<span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">PostgreSQL</span>
+</div>
+<div class="flex items-center justify-between border-t border-white/10 pt-3 mt-auto">
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-label-caps text-label-caps" href="#" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined" style="font-size: 18px;">open_in_new</span> Live Demo
+                            </a>
+<span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
+<span class="material-symbols-outlined">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="group relative bg-surface-container/30 backdrop-blur-xl rounded-xl border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col h-full cursor-pointer" onclick="openModal('modal-1')">
+<div class="h-48 w-full overflow-hidden relative">
+<img class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" data-alt="An abstract visualization of a neural network training process. Multiple layers of interconnected nodes glowing in cyan and deep blue against a pitch-black void. Data pulses through the connections, representing deep learning algorithms in action. The aesthetic is futuristic, scientific, and intensely technical, suited for an AI portfolio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmEBJEoLfzG-83ctyTbGFwBHYcfxaWXJcpWQw5Y0HxzAqOS1NjkC2-yoxl-RKYOXkc2DocJdKUJpIYZ12P_f3jkQhHRbbekMD_QDJEu8vVUlB5rjqBTKpQtK0sXz-0nnGUcCUb1xOj-_wXQ2DYj-Va6z94-4ccWFFprDaOkp6TA5ffd0l3rqPxQuRsDnTA6jlfewSs5ckx0cfW8fo3FGsEXZ-BpV-MZ0M9Ixx64arc7mT6fcx0hQ3apDhOXqOO5X-RkM8DzLrNym8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container/90 via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+<span class="font-label-caps text-label-caps text-error uppercase">ML / AI</span>
+</div>
+</div>
+<div class="p-unit-md flex-grow flex flex-col relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Predictive Maintenance Model</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">
+                            Developed a time-series forecasting model using LSTM networks to predict equipment failure in industrial IoT sensors. Achieved 94% accuracy on historical datasets.
+                        </p>
+<div class="mt-auto flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">Python</span>
+<span class="px-2 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full font-code-block text-[10px] uppercase">TensorFlow</span>
+<span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">Pandas</span>
+</div>
+<div class="flex items-center justify-between border-t border-white/10 pt-3 mt-auto">
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-label-caps text-label-caps" href="#" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined" style="font-size: 18px;">code</span> Notebook
+                            </a>
+<span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
+<span class="material-symbols-outlined">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Skeleton Loaders (Visible by default for demo) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter hidden" id="skeleton-grid">
+<!-- Skeleton 1 -->
+<div class="bg-surface-container/20 rounded-xl border border-white/5 overflow-hidden flex flex-col h-[400px] backdrop-blur-xl">
+<div class="h-48 w-full bg-surface-container-high animate-pulse"></div>
+<div class="p-unit-md flex-grow flex flex-col gap-4">
+<div class="h-6 w-3/4 bg-surface-container-high animate-pulse rounded"></div>
+<div class="space-y-2 flex-grow">
+<div class="h-4 w-full bg-surface-container-high animate-pulse rounded"></div>
+<div class="h-4 w-5/6 bg-surface-container-high animate-pulse rounded"></div>
+<div class="h-4 w-4/6 bg-surface-container-high animate-pulse rounded"></div>
+</div>
+<div class="flex gap-2 mt-auto">
+<div class="h-6 w-16 bg-surface-container-high animate-pulse rounded-full"></div>
+<div class="h-6 w-20 bg-surface-container-high animate-pulse rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Skeleton 2 -->
+<div class="bg-surface-container/20 rounded-xl border border-white/5 overflow-hidden flex flex-col h-[400px] backdrop-blur-xl">
+<div class="h-48 w-full bg-surface-container-high animate-pulse"></div>
+<div class="p-unit-md flex-grow flex flex-col gap-4">
+<div class="h-6 w-2/3 bg-surface-container-high animate-pulse rounded"></div>
+<div class="space-y-2 flex-grow">
+<div class="h-4 w-full bg-surface-container-high animate-pulse rounded"></div>
+<div class="h-4 w-full bg-surface-container-high animate-pulse rounded"></div>
+<div class="h-4 w-1/2 bg-surface-container-high animate-pulse rounded"></div>
+</div>
+<div class="flex gap-2 mt-auto">
+<div class="h-6 w-14 bg-surface-container-high animate-pulse rounded-full"></div>
+<div class="h-6 w-16 bg-surface-container-high animate-pulse rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Skeleton 3 -->
+<div class="bg-surface-container/20 rounded-xl border border-white/5 overflow-hidden flex flex-col h-[400px] backdrop-blur-xl">
+<div class="h-48 w-full bg-surface-container-high animate-pulse"></div>
+<div class="p-unit-md flex-grow flex flex-col gap-4">
+<div class="h-6 w-4/5 bg-surface-container-high animate-pulse rounded"></div>
+<div class="space-y-2 flex-grow">
+<div class="h-4 w-full bg-surface-container-high animate-pulse rounded"></div>
+<div class="h-4 w-4/5 bg-surface-container-high animate-pulse rounded"></div>
+</div>
+<div class="flex gap-2 mt-auto">
+<div class="h-6 w-20 bg-surface-container-high animate-pulse rounded-full"></div>
+<div class="h-6 w-20 bg-surface-container-high animate-pulse rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-unit-xl border-t border-white/10 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-unit-sm">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">BTech Portfolio</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Engineering Portfolio. Built with Precision.</p>
+</div>
+<div class="flex flex-col gap-2 md:items-center">
+<div class="flex flex-wrap gap-4">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="https://github.com">GitHub</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="https://linkedin.com">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="https://twitter.com">Twitter</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="https://leetcode.com">LeetCode</a>
+</div>
+</div>
+<div class="flex flex-col gap-2 md:items-end">
+<div class="flex gap-4">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Detail Modal -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" id="project-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-background/80 backdrop-blur-md" onclick="closeModal()"></div>
+<!-- Modal Content -->
+<div class="relative bg-surface-container/90 backdrop-blur-xl rounded-2xl border border-white/10 w-full max-w-4xl max-h-[921px] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300" id="modal-panel">
+<button class="absolute top-4 right-4 z-10 bg-background/50 hover:bg-white/10 backdrop-blur-md p-2 rounded-full text-on-surface transition-colors border border-white/10" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<!-- Hero Image -->
+<div class="h-64 md:h-80 w-full relative">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a computer screen displaying complex code architecture, with syntax highlighting glowing brightly against a dark theme IDE. In the background, out of focus, are server racks with blinking blue indicator lights, conveying a deep technical, backend engineering atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI8E_Iz5nHXwJnePVXci9jXyCu4HitV0xq5Ah-AFV9Frr7KbNIF0vj7Ckp6XsOtwTjLTrNodED7VG9F03lx_7ObWJdMvVzy4TBOSNXdQeITWmhC9AMyOAg3in-Eg4Fk9Cy_Hga0flxsvZgN5lsKASgFIOeFMTa0RfhXoGh7jOd4kxbrCpFkshNygfpENdfMCJc0vynBzDhvivX_HElMMLZrlOsxyBzXEj4ZuCXmSsZjoO7ozaHZRb18vs4DjNb97McEEjxbxPSenk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container/90 to-transparent"></div>
+</div>
+<!-- Content Area -->
+<div class="p-unit-lg md:p-unit-xl relative -mt-16 z-10">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full font-label-caps text-label-caps uppercase backdrop-blur-sm">Systems Engineering</span>
+<span class="px-3 py-1 bg-white/5 text-on-surface-variant border border-white/10 rounded-full font-label-caps text-label-caps uppercase flex items-center gap-1 backdrop-blur-sm">
+<span class="material-symbols-outlined" style="font-size: 14px;">group</span> Team Size: 3
+                    </span>
+</div>
+<h2 class="font-display-lg-mobile md:text-display-lg text-on-surface mb-unit-sm">Distributed Task Scheduler</h2>
+<div class="prose prose-invert max-w-none font-body-md text-on-surface-variant mb-unit-lg">
+<p class="mb-4">
+                        This project involved designing and implementing a robust distributed task scheduling framework from scratch. The core objective was to manage and execute asynchronous background jobs across a cluster of commodity machines with high reliability and zero single points of failure.
+                    </p>
+<h4 class="font-headline-md text-on-surface mt-6 mb-2">Technical Highlights</h4>
+<ul class="list-disc pl-5 space-y-2">
+<li class="">Implemented a custom Raft consensus module to handle leader election and log replication, ensuring cluster state consistency even during network partitions.</li>
+<li class="">Designed a gRPC-based communication protocol for low-latency dispatching of task payloads between the leader and worker nodes.</li>
+<li class="">Built a persistent storage layer using embedded Key-Value stores (BadgerDB) to guarantee exactly-once execution semantics.</li>
+</ul>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap gap-4 pt-unit-md border-t border-white/10">
+<a class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded-full uppercase font-semibold hover:opacity-90 transition-opacity flex items-center gap-2 shadow-[0_0_15px_rgba(192,193,255,0.3)]" href="#">
+<span class="material-symbols-outlined">code</span> View Source
+                    </a>
+<a class="bg-transparent border border-primary text-primary font-label-caps text-label-caps px-6 py-3 rounded-full uppercase font-semibold hover:bg-primary/10 transition-colors flex items-center gap-2 backdrop-blur-sm" href="#">
+<span class="material-symbols-outlined">article</span> Read Whitepaper
+                    </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Simulation Script -->
+<script>
+        // Simulate data loading
+        setTimeout(() => {
+            document.getElementById('skeleton-grid').classList.add('hidden');
+            document.getElementById('projects-grid').classList.remove('hidden');
+        }, 1500);
+
+        // Modal Logic
+        function openModal(id) {
+            const modal = document.getElementById('project-modal');
+            const panel = document.getElementById('modal-panel');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            panel.classList.remove('scale-95');
+            panel.classList.add('scale-100');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            const panel = document.getElementById('modal-panel');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            panel.classList.remove('scale-100');
+            panel.classList.add('scale-95');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects - BTech Portfolio</title>
+<meta name="description" content="Engineering projects showcase - distributed systems, web applications, machine learning models.">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = { darkMode:"class", theme:{ extend:{
+    "colors":{"surface-container-lowest":"#0d0d15","on-primary-fixed-variant":"#2f2ebe","on-error-container":"#ffdad6","on-tertiary-fixed-variant":"#703700","surface-container":"#1f1f27","surface-variant":"#34343d","primary-fixed-dim":"#c0c1ff","tertiary-container":"#d97721","on-error":"#690005","secondary":"#d0bcff","surface-bright":"#393841","error":"#ffb4ab","on-primary-container":"#0d0096","secondary-fixed":"#e9ddff","primary-container":"#8083ff","on-tertiary-fixed":"#301400","surface-container-highest":"#34343d","outline":"#908fa0","on-secondary-fixed-variant":"#5516be","tertiary":"#ffb783","secondary-fixed-dim":"#d0bcff","on-background":"#e4e1ed","inverse-surface":"#e4e1ed","on-surface-variant":"#c7c4d7","primary-fixed":"#e1e0ff","on-secondary-container":"#c4abff","tertiary-fixed":"#ffdcc5","on-tertiary-container":"#452000","inverse-on-surface":"#303038","background":"#13131b","surface-container-low":"#1b1b23","surface":"#13131b","on-surface":"#e4e1ed","surface-container-high":"#292932","on-secondary-fixed":"#23005c","tertiary-fixed-dim":"#ffb783","on-secondary":"#3c0091","on-primary-fixed":"#07006c","inverse-primary":"#494bd6","surface-dim":"#13131b","on-primary":"#1000a9","error-container":"#93000a","secondary-container":"#571bc1","on-tertiary":"#4f2500","surface-tint":"#c0c1ff","primary":"#c0c1ff","outline-variant":"#464554"},
+    "borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},
+    "spacing":{"unit-md":"16px","container-max":"1280px","unit-xl":"48px","margin-desktop":"64px","unit-xs":"4px","unit-lg":"24px","unit-sm":"8px","margin-mobile":"20px","gutter":"24px"},
+    "fontFamily":{"display-lg":["Poppins"],"body-md":["Inter"],"label-caps":["Inter"],"code-block":["JetBrains Mono"],"body-lg":["Inter"],"display-lg-mobile":["Poppins"],"headline-md":["Poppins"]},
+    "fontSize":{"display-lg":["48px",{"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"1.5","fontWeight":"400"}],"label-caps":["12px",{"lineHeight":"1.0","letterSpacing":"0.05em","fontWeight":"600"}],"code-block":["14px",{"lineHeight":"1.7","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"display-lg-mobile":["32px",{"lineHeight":"1.2","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"1.3","fontWeight":"600"}]}
+  }}}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+  #page-loader{position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s ease;}
+  #page-loader.done{opacity:0;pointer-events:none;}
+  #page-loader .ring{width:44px;height:44px;border:3px solid rgba(192,193,255,0.15);border-top-color:#c0c1ff;border-radius:50%;animation:spin-ring 0.8s linear infinite;}
+  @keyframes spin-ring{to{transform:rotate(360deg);}}
+  .anim-fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.65s cubic-bezier(0.16,1,0.3,1),transform 0.65s cubic-bezier(0.16,1,0.3,1);}
+  .anim-fade-up.visible{opacity:1;transform:translateY(0);}
+  .nav-scrolled{box-shadow:0 4px 24px rgba(0,0,0,0.45)!important;}
+  #scroll-top{position:fixed;bottom:1.5rem;right:1.5rem;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#c0c1ff,#8b5cf6);color:#1000a9;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:all 0.3s ease;z-index:999;box-shadow:0 4px 16px rgba(192,193,255,0.35);}
+  #scroll-top.visible{opacity:1;visibility:visible;transform:translateY(0);}
+  #scroll-top:hover{transform:translateY(-3px);}
+  /* Card transition for filter */
+  #projects-grid > div{transition:opacity 0.35s ease,transform 0.35s ease;}
+  #projects-grid > div.hidden-card{opacity:0;transform:scale(0.95);pointer-events:none;display:none;}
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+  <a class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent" href="index.html">BTech Portfolio</a>
+  <nav class="hidden md:flex items-center gap-unit-lg">
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md" href="index.html">Home</a>
+    <a class="font-label-caps text-label-caps text-primary font-bold border-b-2 border-primary pb-1 px-3 py-2" href="projects.html">Projects</a>
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md" href="certificates.html">Certificates</a>
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md" href="skills.html">Skills</a>
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md" href="coding.html">Coding</a>
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md" href="research.html">Research</a>
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md" href="about.html">About</a>
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-md" href="contact.html">Contact</a>
+  </nav>
+  <div class="flex items-center gap-unit-md">
+    <!-- FIX #8: onclick="toggleDarkMode()" added -->
+    <button onclick="toggleDarkMode()" class="hidden md:flex p-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-primary-container/10 transition-colors">
+      <span class="material-symbols-outlined">dark_mode</span>
+    </button>
+    <a href="resume.html" class="hidden md:flex p-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-primary-container/10 transition-colors">
+      <span class="material-symbols-outlined">description</span>
+    </a>
+    <a class="hidden md:block bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2 rounded-full uppercase font-semibold hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(192,193,255,0.3)]" href="contact.html">Hire Me</a>
+    <!-- FIX #9: Mobile menu button -->
+    <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-on-surface">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="fixed inset-0 z-[60] hidden">
+<div class="absolute inset-0 bg-background/90 backdrop-blur-md" onclick="toggleMobileMenu()"></div>
+<div class="absolute right-0 top-0 h-full w-72 bg-surface-container border-l border-outline-variant/30 flex flex-col p-6 pt-20" style="background:#1f1f27;">
+  <button onclick="toggleMobileMenu()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+  <a class="text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20 font-label-caps text-label-caps transition-colors" href="index.html">Home</a>
+  <a class="text-primary font-bold py-3 border-b border-outline-variant/20 font-label-caps text-label-caps" href="projects.html">Projects</a>
+  <a class="text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20 font-label-caps text-label-caps transition-colors" href="certificates.html">Certificates</a>
+  <a class="text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20 font-label-caps text-label-caps transition-colors" href="skills.html">Skills</a>
+  <a class="text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20 font-label-caps text-label-caps transition-colors" href="coding.html">Coding</a>
+  <a class="text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20 font-label-caps text-label-caps transition-colors" href="research.html">Research</a>
+  <a class="text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20 font-label-caps text-label-caps transition-colors" href="about.html">About</a>
+  <a class="text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20 font-label-caps text-label-caps transition-colors" href="contact.html">Contact</a>
+  <a class="text-on-surface-variant hover:text-primary py-3 border-b border-outline-variant/20 font-label-caps text-label-caps transition-colors" href="resume.html">Resume</a>
+  <a href="contact.html" class="mt-6 bg-primary text-on-primary px-4 py-3 rounded-lg font-label-caps text-label-caps text-center hover:bg-primary-fixed transition-all">Hire Me</a>
+</div>
+</div>
+
+<!-- MAIN -->
+<main class="flex-grow pt-[100px] pb-unit-xl relative">
+  <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
+  <div class="fixed bottom-0 right-1/4 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
+
+  <!-- Page Header -->
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-unit-xl relative z-10">
+    <div class="bg-surface-container/40 backdrop-blur-xl rounded-xl p-unit-lg md:p-unit-xl relative overflow-hidden border border-white/10 shadow-2xl">
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+      <div class="relative z-10">
+        <nav class="flex items-center gap-2 mb-unit-sm text-on-surface-variant font-label-caps text-label-caps uppercase">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
+          <span class="text-primary">Projects</span>
+        </nav>
+        <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-unit-sm">Engineering Portfolio</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">A showcase of technical implementations, algorithmic solutions, and system designs ranging from web applications to machine learning models.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIX #12: Filter Bar with working filterProjects() -->
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-unit-lg relative z-10">
+    <div class="flex items-center gap-unit-sm overflow-x-auto pb-4 border-b border-white/10">
+      <button data-filter="all"     onclick="filterProjects('all')"     class="filter-btn active-filter whitespace-nowrap px-5 py-2 rounded-full font-label-caps text-label-caps uppercase bg-primary/20 text-primary border border-primary/30 backdrop-blur-md shadow-[0_0_15px_rgba(192,193,255,0.15)]">All Projects</button>
+      <button data-filter="web"     onclick="filterProjects('web')"     class="filter-btn whitespace-nowrap px-5 py-2 rounded-full font-label-caps text-label-caps uppercase bg-white/5 text-on-surface-variant border border-white/10 hover:bg-white/10 backdrop-blur-md transition-all">Web Dev</button>
+      <button data-filter="ml"      onclick="filterProjects('ml')"      class="filter-btn whitespace-nowrap px-5 py-2 rounded-full font-label-caps text-label-caps uppercase bg-white/5 text-on-surface-variant border border-white/10 hover:bg-white/10 backdrop-blur-md transition-all">Machine Learning</button>
+      <button data-filter="systems" onclick="filterProjects('systems')" class="filter-btn whitespace-nowrap px-5 py-2 rounded-full font-label-caps text-label-caps uppercase bg-white/5 text-on-surface-variant border border-white/10 hover:bg-white/10 backdrop-blur-md transition-all">Systems / C++</button>
+      <button data-filter="mobile"  onclick="filterProjects('mobile')"  class="filter-btn whitespace-nowrap px-5 py-2 rounded-full font-label-caps text-label-caps uppercase bg-white/5 text-on-surface-variant border border-white/10 hover:bg-white/10 backdrop-blur-md transition-all">Mobile</button>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+    <!-- No results message -->
+    <div id="no-results" class="hidden text-center py-20">
+      <div class="text-5xl mb-4">🔍</div>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">No projects in this category yet.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="projects-grid">
+
+      <!-- ─── PROJECT CARD 1 ─── -->
+      <!-- REPLACE title/desc/tech/links with YOUR real project data -->
+      <div class="group relative bg-surface-container/30 backdrop-blur-xl rounded-xl border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col h-full cursor-pointer anim-fade-up"
+           data-category="systems" onclick="openProjectModal(0)">
+        <div class="h-48 w-full overflow-hidden relative">
+          <img class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuArGDbFRTLxxWjUCpkccRv_TDFw0ZqIol8ojOQ_ppqag6imfsNTNOjv-mmQm_biYg5SiUqxoi2FQYRezJx10BD_sfp3CRNKGCWnpDvVYtDgV9jNX1zutIprnnTzngalK7Sk3Drjoqi56TR5vXgx7Uw4fVaPRbLhLssglZYqbbTNBucGWft8of5fuhXioPCVk7LIktvI93W4uC_j_oOvwK-N5nN65ewLrOqe0VCoZQb4soVxK3UAIPFKo4U3rQIRUoboOJCyEqiA2AE"
+               alt="Distributed Task Scheduler"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container/90 via-transparent to-transparent"></div>
+          <div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+            <span class="font-label-caps text-label-caps text-tertiary uppercase">Systems</span>
+          </div>
+          <div class="absolute top-4 left-4 bg-primary/20 backdrop-blur-md px-2 py-1 rounded-full border border-primary/30">
+            <span class="font-label-caps text-[10px] text-primary uppercase">⭐ Featured</span>
+          </div>
+        </div>
+        <div class="p-unit-md flex-grow flex flex-col relative z-10">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Distributed Task Scheduler</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">A highly concurrent, fault-tolerant distributed task scheduling system written in Go. Utilizes Raft consensus for high availability and gRPC for inter-node communication.</p>
+          <div class="mt-auto flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">Golang</span>
+            <span class="px-2 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full font-code-block text-[10px] uppercase">gRPC</span>
+            <span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">Docker</span>
+          </div>
+          <div class="flex items-center justify-between border-t border-white/10 pt-3 mt-auto">
+            <a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-label-caps text-label-caps"
+               href="https://github.com/PradiptaChandraGiri/distributed-scheduler" target="_blank" rel="noopener noreferrer"
+               onclick="event.stopPropagation()">
+              <span class="material-symbols-outlined" style="font-size:18px;">code</span> Repo
+            </a>
+            <span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── PROJECT CARD 2 ─── -->
+      <div class="group relative bg-surface-container/30 backdrop-blur-xl rounded-xl border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col h-full cursor-pointer anim-fade-up"
+           data-category="web" onclick="openProjectModal(1)">
+        <div class="h-48 w-full overflow-hidden relative">
+          <img class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxFG3p6Jsv43N2OZc4MHDAeQamE-zg2FFw4zGy7F8mFUMCBOJOvOhQyRqgDuViE9RO0yMwimlahgFvU3mfcbLeIDidvv7nU0ZtJjzOABM6jZjOQ54GFMi7_MNGqaJOhghqpNYrOM2PAJ0gvhxHSA49oQLNGH4ShprGl_e19AjEsB5hWpOmWIRiVeJpE7oEiTRzzgvQIPpyXqTOYJx6KW_ckmLfspvtCrE_yzJyi3aqdLZozXwet3dElsSvKH9D-CUcV0aCCnxMplQ"
+               alt="CampusBazaar"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container/90 via-transparent to-transparent"></div>
+          <div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+            <span class="font-label-caps text-label-caps text-primary uppercase">Web Dev</span>
+          </div>
+        </div>
+        <div class="p-unit-md flex-grow flex flex-col relative z-10">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-2">CampusBazaar</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">Campus marketplace for Indian university students to buy and sell items. Features real-time chat, AI-powered listings, Cloudinary image storage, and NextAuth authentication.</p>
+          <div class="mt-auto flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">Next.js 14</span>
+            <span class="px-2 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full font-code-block text-[10px] uppercase">PostgreSQL</span>
+            <span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">Socket.io</span>
+          </div>
+          <div class="flex items-center justify-between border-t border-white/10 pt-3 mt-auto">
+            <div class="flex gap-3">
+              <a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-label-caps text-label-caps"
+                 href="https://github.com/PradiptaChandraGiri/campusbazaar" target="_blank" rel="noopener noreferrer"
+                 onclick="event.stopPropagation()">
+                <span class="material-symbols-outlined" style="font-size:18px;">code</span> Repo
+              </a>
+              <a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-label-caps text-label-caps"
+                 href="https://campusbazaar.vercel.app" target="_blank" rel="noopener noreferrer"
+                 onclick="event.stopPropagation()">
+                <span class="material-symbols-outlined" style="font-size:18px;">open_in_new</span> Live
+              </a>
+            </div>
+            <span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── PROJECT CARD 3 ─── -->
+      <div class="group relative bg-surface-container/30 backdrop-blur-xl rounded-xl border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col h-full cursor-pointer anim-fade-up"
+           data-category="ml" onclick="openProjectModal(2)">
+        <div class="h-48 w-full overflow-hidden relative">
+          <img class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmEBJEoLfzG-83ctyTbGFwBHYcfxaWXJcpWQw5Y0HxzAqOS1NjkC2-yoxl-RKYOXkc2DocJdKUJpIYZ12P_f3jkQhHRbbekMD_QDJEu8vVUlB5rjqBTKpQtK0sXz-0nnGUcCUb1xOj-_wXQ2DYj-Va6z94-4ccWFFprDaOkp6TA5ffd0l3rqPxQuRsDnTA6jlfewSs5ckx0cfW8fo3FGsEXZ-BpV-MZ0M9Ixx64arc7mT6fcx0hQ3apDhOXqOO5X-RkM8DzLrNym8"
+               alt="Predictive Maintenance Model"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container/90 via-transparent to-transparent"></div>
+          <div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+            <span class="font-label-caps text-label-caps text-error uppercase">ML / AI</span>
+          </div>
+        </div>
+        <div class="p-unit-md flex-grow flex flex-col relative z-10">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Predictive Maintenance Model</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">Time-series forecasting model using LSTM networks to predict equipment failure in industrial IoT sensors. Achieved 94% accuracy on historical datasets.</p>
+          <div class="mt-auto flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">Python</span>
+            <span class="px-2 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full font-code-block text-[10px] uppercase">TensorFlow</span>
+            <span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">Pandas</span>
+          </div>
+          <div class="flex items-center justify-between border-t border-white/10 pt-3 mt-auto">
+            <a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-label-caps text-label-caps"
+               href="https://github.com/PradiptaChandraGiri/predictive-maintenance" target="_blank" rel="noopener noreferrer"
+               onclick="event.stopPropagation()">
+              <span class="material-symbols-outlined" style="font-size:18px;">code</span> Notebook
+            </a>
+            <span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end projects-grid -->
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest w-full py-unit-xl border-t border-white/10 relative z-10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-unit-lg">
+    <div class="flex flex-col gap-3">
+      <a href="index.html" class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent w-fit">BTech Portfolio</a>
+      <p class="font-body-md text-body-md text-on-surface-variant opacity-60 max-w-xs">AI & Machine Learning Enthusiast | Full-Stack Developer</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <span class="font-label-caps text-label-caps text-primary uppercase tracking-wider mb-1">Quick Links</span>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 w-fit" href="projects.html">Projects</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 w-fit" href="certificates.html">Certificates</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 w-fit" href="research.html">Research</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 w-fit" href="contact.html">Contact</a>
+    </div>
+    <div class="flex flex-col gap-2">
+      <span class="font-label-caps text-label-caps text-primary uppercase tracking-wider mb-1">Connect</span>
+      <a href="https://github.com/PradiptaChandraGiri" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 flex items-center gap-2 w-fit"><span class="material-symbols-outlined text-sm">code</span>GitHub</a>
+      <a href="https://www.linkedin.com/in/pradipta-chandra-giri-035b88340/" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 flex items-center gap-2 w-fit"><span class="material-symbols-outlined text-sm">work</span>LinkedIn</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 flex items-center gap-2 w-fit"><span class="material-symbols-outlined text-sm">tag</span>Twitter / X</a>
+      <a href="https://leetcode.com/Pradipta_Chadnra_Giri" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 flex items-center gap-2 w-fit"><span class="material-symbols-outlined text-sm">psychology</span>LeetCode</a>
+    </div>
+  </div>
+  <div class="border-t border-white/10 pt-unit-md flex flex-col md:flex-row items-center justify-between gap-2">
+    <p class="font-label-caps text-label-caps text-on-surface-variant opacity-50">© 2024 Pradipta Chandra Giri. Built with ❤️ and Precision.</p>
+    <div class="flex gap-4">
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-50 hover:opacity-100" href="#">Privacy</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-50 hover:opacity-100" href="#">Terms</a>
+    </div>
+  </div>
+</div>
+</footer>
+
+<!-- PROJECT DETAIL MODAL -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" id="project-modal">
+<div class="absolute inset-0 bg-background/80 backdrop-blur-md" onclick="closeProjectModal()"></div>
+<div class="relative bg-surface-container/90 backdrop-blur-xl rounded-2xl border border-white/10 w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300" id="modal-panel">
+  <button class="absolute top-4 right-4 z-10 bg-background/50 hover:bg-white/10 backdrop-blur-md p-2 rounded-full text-on-surface transition-colors border border-white/10" onclick="closeProjectModal()">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <!-- Modal content injected by JS -->
+  <div id="modal-content"></div>
+</div>
+</div>
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" title="Back to top">
+  <span class="material-symbols-outlined" style="font-size:20px">arrow_upward</span>
+</button>
+
+<!-- =====================================================
+     SCRIPTS
+===================================================== -->
+<script>
+/* ── Shared utilities ── */
+(function(){ const s=localStorage.getItem('theme'); document.documentElement.classList.toggle('dark',s!=='light'); })();
+function toggleDarkMode(){ const d=document.documentElement.classList.toggle('dark'); localStorage.setItem('theme',d?'dark':'light'); }
+function toggleMobileMenu(){ const m=document.getElementById('mobile-menu'); if(!m)return; const h=m.classList.toggle('hidden'); document.body.style.overflow=h?'':'hidden'; }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ const m=document.getElementById('mobile-menu'); if(m&&!m.classList.contains('hidden'))toggleMobileMenu(); closeProjectModal(); } });
+
+/* ── Page loader ── */
+document.addEventListener('DOMContentLoaded',()=>{
+  let loader=document.getElementById('page-loader');
+  if(!loader){ loader=document.createElement('div'); loader.id='page-loader'; loader.innerHTML='<div class="ring"></div>'; document.body.prepend(loader); }
+  window.addEventListener('load',()=>{ setTimeout(()=>loader&&loader.classList.add('done'),400); setTimeout(()=>loader&&loader.remove(),950); });
+  const nav=document.querySelector('header');
+  if(nav) window.addEventListener('scroll',()=>nav.classList.toggle('nav-scrolled',window.scrollY>20),{passive:true});
+  const sb=document.getElementById('scroll-top');
+  if(sb){ sb.onclick=()=>window.scrollTo({top:0,behavior:'smooth'}); window.addEventListener('scroll',()=>sb.classList.toggle('visible',window.scrollY>400),{passive:true}); }
+  /* scroll reveal */
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0.07,rootMargin:'0px 0px -36px 0px'});
+  document.querySelectorAll('.anim-fade-up').forEach(el=>obs.observe(el));
+});
+
+/* ── FIX #12: Filter Projects ── */
+function filterProjects(category) {
+  const cards   = document.querySelectorAll('#projects-grid > div[data-category]');
+  const noRes   = document.getElementById('no-results');
+  let   visible = 0;
+
+  cards.forEach(card => {
+    const match = category === 'all' || card.dataset.category === category;
+    if (match) {
+      card.classList.remove('hidden-card');
+      card.style.display = '';
+      visible++;
+    } else {
+      card.classList.add('hidden-card');
+      setTimeout(() => { if (card.classList.contains('hidden-card')) card.style.display = 'none'; }, 350);
+    }
+  });
+
+  if (noRes) noRes.classList.toggle('hidden', visible > 0);
+
+  /* Update active filter button */
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const isActive = btn.dataset.filter === category;
+    btn.classList.toggle('bg-primary/20',    isActive);
+    btn.classList.toggle('text-primary',     isActive);
+    btn.classList.toggle('border-primary/30',isActive);
+    btn.classList.toggle('shadow-[0_0_15px_rgba(192,193,255,0.15)]', isActive);
+    btn.classList.toggle('bg-white/5',        !isActive);
+    btn.classList.toggle('text-on-surface-variant', !isActive);
+    btn.classList.toggle('border-white/10',   !isActive);
+  });
+}
+
+/* ── FIX #13: Project Modal with dynamic content per card ── */
+/* ADD YOUR REAL PROJECT DATA HERE */
+const PROJECTS = [
+  {
+    title: 'Distributed Task Scheduler',
+    category: 'Systems / C++',
+    tech: ['Golang','gRPC','Docker','Raft Consensus','BadgerDB'],
+    description: 'A highly concurrent, fault-tolerant distributed task scheduling system written in Go. Implements Raft consensus for leader election and log replication, gRPC-based inter-node communication, and a persistent storage layer using embedded Key-Value stores.',
+    highlights: [
+      'Custom Raft consensus module for leader election and log replication',
+      'gRPC-based communication for low-latency dispatching',
+      'Persistent storage using embedded BadgerDB',
+      'Handles node failures and network partitions',
+      'Horizontal scaling with zero downtime',
+    ],
+    github: 'https://github.com/PradiptaChandraGiri/distributed-scheduler',
+    live: null,
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuArGDbFRTLxxWjUCpkccRv_TDFw0ZqIol8ojOQ_ppqag6imfsNTNOjv-mmQm_biYg5SiUqxoi2FQYRezJx10BD_sfp3CRNKGCWnpDvVYtDgV9jNX1zutIprnnTzngalK7Sk3Drjoqi56TR5vXgx7Uw4fVaPRbLhLssglZYqbbTNBucGWft8of5fuhXioPCVk7LIktvI93W4uC_j_oOvwK-N5nN65ewLrOqe0VCoZQb4soVxK3UAIPFKo4U3rQIRUoboOJCyEqiA2AE',
+    teamSize: 1,
+    status: 'Completed',
+  },
+  {
+    title: 'CampusBazaar',
+    category: 'Web Dev',
+    tech: ['Next.js 14','TypeScript','PostgreSQL','Prisma','Cloudinary','NextAuth','Socket.io','Redis'],
+    description: 'Full-stack campus marketplace platform for Indian university students. Enables buying and selling of textbooks, electronics, and dorm essentials with real-time chat, AI-powered description generation, and a robust authentication system.',
+    highlights: [
+      'Real-time messaging with Socket.io',
+      'AI description generation using Claude API',
+      'Cloudinary integration for image uploads',
+      'NextAuth + custom JWT dual auth (fixed conflict)',
+      'Coin reward system for verified sellers',
+    ],
+    github: 'https://github.com/PradiptaChandraGiri/campusbazaar',
+    live: 'https://campusbazaar.vercel.app',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDxFG3p6Jsv43N2OZc4MHDAeQamE-zg2FFw4zGy7F8mFUMCBOJOvOhQyRqgDuViE9RO0yMwimlahgFvU3mfcbLeIDidvv7nU0ZtJjzOABM6jZjOQ54GFMi7_MNGqaJOhghqpNYrOM2PAJ0gvhxHSA49oQLNGH4ShprGl_e19AjEsB5hWpOmWIRiVeJpE7oEiTRzzgvQIPpyXqTOYJx6KW_ckmLfspvtCrE_yzJyi3aqdLZozXwet3dElsSvKH9D-CUcV0aCCnxMplQ',
+    teamSize: 2,
+    status: 'Live',
+  },
+  {
+    title: 'Predictive Maintenance Model',
+    category: 'ML / AI',
+    tech: ['Python','TensorFlow','Pandas','NumPy','Scikit-learn','Jupyter'],
+    description: 'Time-series forecasting model using LSTM networks to predict equipment failure in industrial IoT sensors. Achieved 94% accuracy on historical datasets with a custom anomaly detection pipeline.',
+    highlights: [
+      '94% prediction accuracy on test data',
+      'LSTM-based time-series forecasting',
+      'Custom feature engineering pipeline',
+      'Anomaly detection with isolation forests',
+      'REST API endpoint for real-time predictions',
+    ],
+    github: 'https://github.com/PradiptaChandraGiri/predictive-maintenance',
+    live: null,
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDmEBJEoLfzG-83ctyTbGFwBHYcfxaWXJcpWQw5Y0HxzAqOS1NjkC2-yoxl-RKYOXkc2DocJdKUJpIYZ12P_f3jkQhHRbbekMD_QDJEu8vVUlB5rjqBTKpQtK0sXz-0nnGUcCUb1xOj-_wXQ2DYj-Va6z94-4ccWFFprDaOkp6TA5ffd0l3rqPxQuRsDnTA6jlfewSs5ckx0cfW8fo3FGsEXZ-BpV-MZ0M9Ixx64arc7mT6fcx0hQ3apDhOXqOO5X-RkM8DzLrNym8',
+    teamSize: 1,
+    status: 'Completed',
+  },
+];
+
+function openProjectModal(index) {
+  const p       = PROJECTS[index];
+  if (!p) return;
+  const modal   = document.getElementById('project-modal');
+  const panel   = document.getElementById('modal-panel');
+  const content = document.getElementById('modal-content');
+
+  content.innerHTML = `
+    <div class="h-64 md:h-80 w-full relative">
+      <img class="w-full h-full object-cover" src="${p.image}" alt="${p.title}"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-surface-container/90 to-transparent"></div>
+    </div>
+    <div class="p-unit-lg md:p-unit-xl relative -mt-16 z-10">
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="px-3 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full font-label-caps text-label-caps uppercase backdrop-blur-sm">${p.category}</span>
+        <span class="px-3 py-1 bg-white/5 text-on-surface-variant border border-white/10 rounded-full font-label-caps text-label-caps uppercase flex items-center gap-1 backdrop-blur-sm">
+          <span class="material-symbols-outlined" style="font-size:14px;">group</span> Team: ${p.teamSize}
+        </span>
+        <span class="px-3 py-1 ${p.status==='Live'?'bg-emerald-500/20 text-emerald-400 border-emerald-500/30':'bg-primary/10 text-primary border-primary/20'} border rounded-full font-label-caps text-label-caps uppercase backdrop-blur-sm">${p.status}</span>
+      </div>
+      <h2 class="font-display-lg-mobile md:text-display-lg text-on-surface mb-4">${p.title}</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">${p.description}</p>
+      <h4 class="font-headline-md text-on-surface mb-3">Key Highlights</h4>
+      <ul class="space-y-2 mb-6">
+        ${p.highlights.map(h=>`<li class="flex items-start gap-2 font-body-md text-body-md text-on-surface-variant"><span class="text-primary mt-1 flex-shrink-0">✓</span><span>${h}</span></li>`).join('')}
+      </ul>
+      <div class="flex flex-wrap gap-2 mb-6">
+        ${p.tech.map(t=>`<span class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-code-block text-[10px] uppercase">${t}</span>`).join('')}
+      </div>
+      <div class="flex flex-wrap gap-4 pt-unit-md border-t border-white/10">
+        ${p.github?`<a class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded-full uppercase font-semibold hover:opacity-90 transition-opacity flex items-center gap-2 shadow-[0_0_15px_rgba(192,193,255,0.3)]" href="${p.github}" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">code</span>View Source</a>`:''}
+        ${p.live?`<a class="bg-transparent border border-primary text-primary font-label-caps text-label-caps px-6 py-3 rounded-full uppercase font-semibold hover:bg-primary/10 transition-colors flex items-center gap-2" href="${p.live}" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">open_in_new</span>Live Demo</a>`:''}
+      </div>
+    </div>`;
+
+  modal.classList.remove('opacity-0','pointer-events-none');
+  modal.classList.add('opacity-100');
+  panel.classList.remove('scale-95');
+  panel.classList.add('scale-100');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProjectModal() {
+  const modal = document.getElementById('project-modal');
+  const panel = document.getElementById('modal-panel');
+  modal.classList.add('opacity-0','pointer-events-none');
+  modal.classList.remove('opacity-100');
+  panel.classList.add('scale-95');
+  panel.classList.remove('scale-100');
+  document.body.style.overflow = '';
+}
+</script>
+
+</body></html>

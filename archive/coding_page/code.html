@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coding Profile - Engineering Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#301400",
+                      "error": "#ffb4ab",
+                      "tertiary": "#ffb783",
+                      "on-secondary-fixed": "#23005c",
+                      "outline": "#908fa0",
+                      "surface-container-high": "#292932",
+                      "primary-container": "#8083ff",
+                      "on-surface-variant": "#c7c4d7",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#703700",
+                      "on-primary-container": "#0d0096",
+                      "surface-dim": "#13131b",
+                      "tertiary-fixed": "#ffdcc5",
+                      "inverse-primary": "#494bd6",
+                      "error-container": "#93000a",
+                      "background": "#13131b",
+                      "secondary-fixed": "#e9ddff",
+                      "on-tertiary-container": "#452000",
+                      "on-tertiary": "#4f2500",
+                      "surface-variant": "#34343d",
+                      "surface-container-lowest": "#0d0d15",
+                      "tertiary-fixed-dim": "#ffb783",
+                      "surface-container-low": "#1b1b23",
+                      "inverse-on-surface": "#303038",
+                      "secondary": "#d0bcff",
+                      "on-error": "#690005",
+                      "surface-container": "#1f1f27",
+                      "on-secondary-container": "#c4abff",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "surface-bright": "#393841",
+                      "surface": "#13131b",
+                      "on-secondary-fixed-variant": "#5516be",
+                      "on-primary": "#1000a9",
+                      "tertiary-container": "#d97721",
+                      "outline-variant": "#464554",
+                      "on-surface": "#e4e1ed",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "on-primary-fixed": "#07006c",
+                      "primary": "#c0c1ff",
+                      "on-secondary": "#3c0091",
+                      "surface-tint": "#c0c1ff",
+                      "primary-fixed": "#e1e0ff",
+                      "inverse-surface": "#e4e1ed",
+                      "surface-container-highest": "#34343d",
+                      "secondary-container": "#571bc1",
+                      "on-background": "#e4e1ed"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit-xs": "4px",
+                      "unit-sm": "8px",
+                      "unit-md": "16px",
+                      "unit-lg": "24px",
+                      "unit-xl": "48px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Poppins"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Poppins"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Poppins"
+                      ],
+                      "code-block": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "code-block": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Base Styles & Utilities */
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            overflow-x: hidden;
+        }
+        
+        .glass-panel {
+            background-color: rgba(41, 41, 50, 0.4); /* surface-container-high with opacity */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glow-indigo {
+            box-shadow: 0 0 30px rgba(192, 193, 255, 0.15); /* primary color glow */
+        }
+        
+        .glow-indigo:hover {
+            box-shadow: 0 0 40px rgba(192, 193, 255, 0.3);
+        }
+
+        /* Entrance Animations (Framer Motion style) */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered delays */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* Custom Scrollbar for Terminal/Tables */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface-container-low');
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant');
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline');
+        }
+
+        /* SVG Ring Animation */
+        .progress-ring__circle {
+            transition: stroke-dashoffset 1.5s ease-in-out;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Rendered from JSON) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md dark:bg-background/60 border-b border-white/20 dark:border-outline-variant/30 shadow-sm transition-all duration-300" id="global-nav">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand -->
+<div class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent tracking-tight">
+                BTech Portfolio
+            </div>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-6">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md transition-all duration-300 uppercase tracking-widest" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md transition-all duration-300 uppercase tracking-widest" href="#">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md transition-all duration-300 uppercase tracking-widest" href="#">Certificates</a>
+<!-- Active State applied to Skills (closest match for Coding Page) -->
+<a class="font-label-caps text-label-caps text-primary font-bold border-b-2 border-primary pb-1 uppercase tracking-widest" href="#">Skills</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md transition-all duration-300 uppercase tracking-widest" href="#">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md transition-all duration-300 uppercase tracking-widest" href="#">Contact</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<button class="hidden md:flex font-label-caps text-label-caps text-primary dark:text-primary hover:bg-primary-container/10 px-4 py-2 rounded-full transition-all duration-300 scale-95 active:scale-90 transition-transform border border-primary/30 uppercase tracking-widest">
+                    Hire Me
+                </button>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<button class="hover:text-primary transition-colors p-2 rounded-full hover:bg-primary-container/10"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button>
+<button class="hover:text-primary transition-colors p-2 rounded-full hover:bg-primary-container/10"><span class="material-symbols-outlined text-[20px]">description</span></button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-unit-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto min-h-screen">
+<!-- Hero Section -->
+<section class="mb-unit-xl reveal-up flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-4">Algorithmic <span class="text-primary">Prowess</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Real-time analysis of problem-solving consistency, data structure mastery, and algorithmic efficiency across core platforms.
+                </p>
+</div>
+<a class="group flex items-center gap-2 bg-primary-container/20 text-primary border border-primary/30 font-label-caps text-label-caps px-6 py-3 rounded-full glow-indigo transition-all duration-300 scale-95 hover:scale-100 uppercase tracking-widest" href="#">
+<span>View LeetCode Profile</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</section>
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-gutter">
+<!-- Concentric Progress Rings (Col Span 4) -->
+<div class="md:col-span-4 glass-panel rounded-xl p-unit-md reveal-up delay-100 flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Abstract decorative blur -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+<h3 class="font-headline-md text-headline-md w-full text-left mb-6">Problems Solved</h3>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full" viewbox="0 0 200 200">
+<!-- Background Rings -->
+<circle class="text-surface-variant" cx="100" cy="100" fill="none" r="80" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-surface-variant" cx="100" cy="100" fill="none" r="60" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-surface-variant" cx="100" cy="100" fill="none" r="40" stroke="currentColor" stroke-width="8"></circle>
+<!-- Progress Rings (Animated via JS) -->
+<circle class="text-primary progress-ring__circle" cx="100" cy="100" fill="none" id="ring-easy" r="80" stroke="currentColor" stroke-dasharray="502" stroke-dashoffset="502" stroke-linecap="round" stroke-width="8"></circle>
+<circle class="text-tertiary progress-ring__circle" cx="100" cy="100" fill="none" id="ring-medium" r="60" stroke="currentColor" stroke-dasharray="377" stroke-dashoffset="377" stroke-linecap="round" stroke-width="8"></circle>
+<circle class="text-error progress-ring__circle" cx="100" cy="100" fill="none" id="ring-hard" r="40" stroke="currentColor" stroke-dasharray="251" stroke-dashoffset="251" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<!-- Center Stat -->
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-display-lg text-display-lg-mobile">425</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total</span>
+</div>
+</div>
+<div class="w-full mt-6 space-y-3">
+<div class="flex justify-between items-center font-code-block text-code-block">
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-primary"></div><span>Easy</span></div>
+<span class="text-on-surface-variant">250 <span class="text-outline">/ 800</span></span>
+</div>
+<div class="flex justify-between items-center font-code-block text-code-block">
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-tertiary"></div><span>Medium</span></div>
+<span class="text-on-surface-variant">150 <span class="text-outline">/ 1600</span></span>
+</div>
+<div class="flex justify-between items-center font-code-block text-code-block">
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-error"></div><span>Hard</span></div>
+<span class="text-on-surface-variant">25 <span class="text-outline">/ 700</span></span>
+</div>
+</div>
+</div>
+<!-- Submission Heatmap (Col Span 8) -->
+<div class="md:col-span-8 glass-panel rounded-xl p-unit-md reveal-up delay-200 flex flex-col justify-between">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md">Submission Activity</h3>
+<div class="font-code-block text-code-block text-on-surface-variant bg-surface-container py-1 px-3 rounded-md">Max Streak: <span class="text-primary font-bold">42 Days</span></div>
+</div>
+<!-- Heatmap Grid Container -->
+<div class="w-full overflow-x-auto pb-2">
+<div class="flex gap-1 min-w-[600px]" id="heatmap-container">
+<!-- Heatmap generated via JS for brevity and pattern consistency -->
+</div>
+</div>
+<div class="flex justify-end items-center gap-2 mt-4 font-label-caps text-label-caps text-on-surface-variant uppercase">
+<span>Less</span>
+<div class="flex gap-1">
+<div class="w-3 h-3 rounded-sm bg-surface-container-highest"></div>
+<div class="w-3 h-3 rounded-sm bg-primary/30"></div>
+<div class="w-3 h-3 rounded-sm bg-primary/60"></div>
+<div class="w-3 h-3 rounded-sm bg-primary"></div>
+</div>
+<span>More</span>
+</div>
+</div>
+</div>
+<!-- Secondary Features Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-gutter">
+<!-- Languages Used (Terminal Style) -->
+<div class="glass-panel rounded-xl reveal-up delay-300 overflow-hidden border border-outline-variant/30">
+<div class="bg-surface-container-highest px-4 py-2 flex items-center gap-2 border-b border-outline-variant/30">
+<div class="w-3 h-3 rounded-full bg-error/80"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary/80"></div>
+<div class="w-3 h-3 rounded-full bg-[#10b981]"></div>
+<span class="font-code-block text-code-block text-on-surface-variant ml-2 text-[12px]">languages.sh</span>
+</div>
+<div class="p-unit-md space-y-5">
+<!-- Lang 1 -->
+<div>
+<div class="flex justify-between font-code-block text-code-block mb-2">
+<span>C++</span>
+<span class="text-primary">65%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-inverse-primary w-[65%] rounded-full"></div>
+</div>
+</div>
+<!-- Lang 2 -->
+<div>
+<div class="flex justify-between font-code-block text-code-block mb-2">
+<span>Python 3</span>
+<span class="text-primary">25%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-inverse-primary w-[25%] rounded-full"></div>
+</div>
+</div>
+<!-- Lang 3 -->
+<div>
+<div class="flex justify-between font-code-block text-code-block mb-2">
+<span>Java</span>
+<span class="text-primary">10%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-inverse-primary w-[10%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Topics (Pill Tags) -->
+<div class="glass-panel rounded-xl p-unit-md reveal-up delay-400">
+<h3 class="font-headline-md text-headline-md mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">local_offer</span>
+                    Top Topics
+                </h3>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary-container/10 text-primary border border-primary/20 rounded-full px-3 py-1 font-code-block text-[12px] hover:bg-primary/20 transition-colors cursor-default">Arrays</span>
+<span class="bg-primary-container/10 text-primary border border-primary/20 rounded-full px-3 py-1 font-code-block text-[12px] hover:bg-primary/20 transition-colors cursor-default">Dynamic Programming</span>
+<span class="bg-primary-container/10 text-primary border border-primary/20 rounded-full px-3 py-1 font-code-block text-[12px] hover:bg-primary/20 transition-colors cursor-default">Hash Table</span>
+<span class="bg-primary-container/10 text-primary border border-primary/20 rounded-full px-3 py-1 font-code-block text-[12px] hover:bg-primary/20 transition-colors cursor-default">Strings</span>
+<span class="bg-primary-container/10 text-primary border border-primary/20 rounded-full px-3 py-1 font-code-block text-[12px] hover:bg-primary/20 transition-colors cursor-default">DFS</span>
+<span class="bg-primary-container/10 text-primary border border-primary/20 rounded-full px-3 py-1 font-code-block text-[12px] hover:bg-primary/20 transition-colors cursor-default">Binary Tree</span>
+<span class="bg-primary-container/10 text-primary border border-primary/20 rounded-full px-3 py-1 font-code-block text-[12px] hover:bg-primary/20 transition-colors cursor-default">Two Pointers</span>
+<span class="bg-primary-container/10 text-primary border border-primary/20 rounded-full px-3 py-1 font-code-block text-[12px] hover:bg-primary/20 transition-colors cursor-default">Graph</span>
+</div>
+</div>
+<!-- CS Concept Diagram (Red-Black Tree) -->
+<div class="glass-panel rounded-xl p-unit-md reveal-up delay-400 flex flex-col items-center justify-center relative overflow-hidden">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant absolute top-4 left-4 uppercase">CS Foundations</h3>
+<div class="w-full h-full flex items-center justify-center mt-4">
+<!-- Inline SVG for Red Black Tree to ensure specific visual control -->
+<svg class="w-full h-auto max-w-[200px]" viewbox="0 0 200 150">
+<g stroke="var(--color-outline-variant)" stroke-width="2">
+<!-- Edges Level 1 -->
+<line x1="100" x2="60" y1="20" y2="60"></line>
+<line x1="100" x2="140" y1="20" y2="60"></line>
+<!-- Edges Level 2 -->
+<line x1="60" x2="30" y1="60" y2="100"></line>
+<line x1="60" x2="80" y1="60" y2="100"></line>
+<line x1="140" x2="120" y1="60" y2="100"></line>
+<line x1="140" x2="170" y1="60" y2="100"></line>
+</g>
+<!-- Nodes -->
+<!-- Root (Black) -->
+<circle cx="100" cy="20" fill="var(--color-surface-bright)" r="12" stroke="var(--color-outline)" stroke-width="2"></circle>
+<text fill="var(--color-on-surface)" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="100" y="24">15</text>
+<!-- L1 Left (Red) -->
+<circle cx="60" cy="60" fill="var(--color-error-container)" r="12" stroke="var(--color-error)" stroke-width="2"></circle>
+<text fill="var(--color-on-error-container)" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="60" y="64">10</text>
+<!-- L1 Right (Black) -->
+<circle cx="140" cy="60" fill="var(--color-surface-bright)" r="12" stroke="var(--color-outline)" stroke-width="2"></circle>
+<text fill="var(--color-on-surface)" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="140" y="64">25</text>
+<!-- L2 Nodes (Black) -->
+<circle cx="30" cy="100" fill="var(--color-surface-bright)" r="12" stroke="var(--color-outline)" stroke-width="2"></circle>
+<text fill="var(--color-on-surface)" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="30" y="104">5</text>
+<circle cx="80" cy="100" fill="var(--color-surface-bright)" r="12" stroke="var(--color-outline)" stroke-width="2"></circle>
+<text fill="var(--color-on-surface)" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="80" y="104">12</text>
+<circle cx="120" cy="100" fill="var(--color-surface-bright)" r="12" stroke="var(--color-outline)" stroke-width="2"></circle>
+<text fill="var(--color-on-surface)" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="120" y="104">20</text>
+<circle cx="170" cy="100" fill="var(--color-surface-bright)" r="12" stroke="var(--color-outline)" stroke-width="2"></circle>
+<text fill="var(--color-on-surface)" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="170" y="104">30</text>
+</svg>
+</div>
+<div class="font-code-block text-[10px] text-on-surface-variant mt-2">fig. Red-Black Tree Balancing</div>
+</div>
+</div>
+<!-- Recent Submissions Table -->
+<section class="glass-panel rounded-xl overflow-hidden reveal-up delay-200">
+<div class="p-6 border-b border-outline-variant/30 flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md">Recent Submissions</h3>
+<button class="font-label-caps text-label-caps text-primary hover:text-inverse-primary transition-colors flex items-center gap-1 uppercase">
+                    View All <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md whitespace-nowrap">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4 font-semibold">Status</th>
+<th class="px-6 py-4 font-semibold">Title</th>
+<th class="px-6 py-4 font-semibold">Difficulty</th>
+<th class="px-6 py-4 font-semibold">Language</th>
+<th class="px-6 py-4 font-semibold">Time Submitted</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+</td>
+<td class="px-6 py-4 font-medium text-on-surface group-hover:text-primary transition-colors">LRU Cache</td>
+<td class="px-6 py-4"><span class="text-tertiary font-code-block text-[14px]">Medium</span></td>
+<td class="px-6 py-4 font-code-block text-[14px] text-on-surface-variant">C++</td>
+<td class="px-6 py-4 text-on-surface-variant text-[14px]">2 hours ago</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+</td>
+<td class="px-6 py-4 font-medium text-on-surface group-hover:text-primary transition-colors">Trapping Rain Water</td>
+<td class="px-6 py-4"><span class="text-error font-code-block text-[14px]">Hard</span></td>
+<td class="px-6 py-4 font-code-block text-[14px] text-on-surface-variant">Python3</td>
+<td class="px-6 py-4 text-on-surface-variant text-[14px]">5 hours ago</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-outline" data-weight="fill">cancel</span>
+</td>
+<td class="px-6 py-4 font-medium text-on-surface group-hover:text-primary transition-colors">Merge k Sorted Lists</td>
+<td class="px-6 py-4"><span class="text-error font-code-block text-[14px]">Hard</span></td>
+<td class="px-6 py-4 font-code-block text-[14px] text-on-surface-variant">C++</td>
+<td class="px-6 py-4 text-on-surface-variant text-[14px]">Yesterday</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+</td>
+<td class="px-6 py-4 font-medium text-on-surface group-hover:text-primary transition-colors">Two Sum</td>
+<td class="px-6 py-4"><span class="text-primary font-code-block text-[14px]">Easy</span></td>
+<td class="px-6 py-4 font-code-block text-[14px] text-on-surface-variant">Java</td>
+<td class="px-6 py-4 text-on-surface-variant text-[14px]">Yesterday</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+</td>
+<td class="px-6 py-4 font-medium text-on-surface group-hover:text-primary transition-colors">Valid Parentheses</td>
+<td class="px-6 py-4"><span class="text-primary font-code-block text-[14px]">Easy</span></td>
+<td class="px-6 py-4 font-code-block text-[14px] text-on-surface-variant">C++</td>
+<td class="px-6 py-4 text-on-surface-variant text-[14px]">2 days ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<!-- Footer (Rendered from JSON) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 w-full py-unit-xl mt-unit-xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col gap-4">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface tracking-tight">BTech Portfolio</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Engineering Portfolio. Built with Precision.</p>
+</div>
+<!-- Empty column for layout balance as per grid-cols-3 -->
+<div class="hidden md:block"></div>
+<!-- Links -->
+<div class="flex flex-col gap-3 md:items-end">
+<div class="flex flex-wrap gap-4 md:justify-end">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100 uppercase tracking-widest" href="#">GitHub</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100 uppercase tracking-widest" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100 uppercase tracking-widest" href="#">Twitter</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100 uppercase tracking-widest" href="#">LeetCode</a>
+</div>
+<div class="flex flex-wrap gap-4 md:justify-end mt-2">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100 uppercase tracking-widest" href="#">Privacy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100 uppercase tracking-widest" href="#">Terms</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        // Set CSS variables for inline SVG usage
+        const setCSSVars = () => {
+            const root = document.documentElement;
+            // Map tailwind config colors to CSS vars for SVG
+            const colors = tailwind.config.theme.extend.colors;
+            root.style.setProperty('--color-surface-bright', colors['surface-bright']);
+            root.style.setProperty('--color-outline', colors['outline']);
+            root.style.setProperty('--color-on-surface', colors['on-surface']);
+            root.style.setProperty('--color-error-container', colors['error-container']);
+            root.style.setProperty('--color-error', colors['error']);
+            root.style.setProperty('--color-on-error-container', colors['on-error-container']);
+            root.style.setProperty('--color-outline-variant', colors['outline-variant']);
+        };
+        setCSSVars();
+
+        // 1. Scroll Entrance Animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-up').forEach(el => {
+                observer.observe(el);
+            });
+
+            // 2. Animate SVG Progress Rings
+            setTimeout(() => {
+                // Easy: 250/800 (approx 31%) -> Circumference 502 -> Offset = 502 - (0.31 * 502) = 346
+                document.getElementById('ring-easy').style.strokeDashoffset = '346';
+                // Medium: 150/1600 (approx 9%) -> Circumference 377 -> Offset = 377 - (0.09 * 377) = 343
+                document.getElementById('ring-medium').style.strokeDashoffset = '343';
+                // Hard: 25/700 (approx 3.5%) -> Circumference 251 -> Offset = 251 - (0.035 * 251) = 242
+                document.getElementById('ring-hard').style.strokeDashoffset = '242';
+            }, 500);
+
+            // 3. Generate Fake Heatmap Data
+            const heatmapContainer = document.getElementById('heatmap-container');
+            const weeks = 20; // Show 20 weeks for visual fit
+            const daysPerWeek = 7;
+            
+            for(let w = 0; w < weeks; w++) {
+                const weekCol = document.createElement('div');
+                weekCol.className = 'flex flex-col gap-1';
+                
+                for(let d = 0; d < daysPerWeek; d++) {
+                    const daySquare = document.createElement('div');
+                    daySquare.className = 'w-3 h-3 rounded-sm transition-colors duration-300 hover:scale-125 hover:z-10 cursor-pointer';
+                    
+                    // Randomize intensity
+                    const rand = Math.random();
+                    if(rand > 0.8) {
+                        daySquare.classList.add('bg-primary');
+                        daySquare.title = '5+ submissions';
+                    } else if(rand > 0.5) {
+                        daySquare.classList.add('bg-primary', 'opacity-60');
+                        daySquare.title = '2-4 submissions';
+                    } else if(rand > 0.2) {
+                        daySquare.classList.add('bg-primary', 'opacity-30');
+                        daySquare.title = '1 submission';
+                    } else {
+                        daySquare.classList.add('bg-surface-container-highest');
+                        daySquare.title = '0 submissions';
+                    }
+                    
+                    weekCol.appendChild(daySquare);
+                }
+                heatmapContainer.appendChild(weekCol);
+            }
+        });
+    </script>
+</body></html>

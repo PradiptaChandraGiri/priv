@@ -1,0 +1,287 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BTech Portfolio - About</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-secondary-container": "#c4abff",
+                        "on-surface": "#e4e1ed",
+                        "error-container": "#93000a",
+                        "surface-bright": "#393841",
+                        "on-primary": "#1000a9",
+                        "on-surface-variant": "#c7c4d7",
+                        "surface-variant": "#34343d",
+                        "on-background": "#e4e1ed",
+                        "inverse-primary": "#494bd6",
+                        "tertiary-fixed": "#ffdcc5",
+                        "background": "#13131b",
+                        "error": "#ffb4ab",
+                        "primary-container": "#8083ff",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-secondary-fixed": "#23005c",
+                        "tertiary-container": "#d97721",
+                        "surface-container": "#1f1f27",
+                        "surface-container-highest": "#34343d",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-dim": "#13131b",
+                        "surface-container-low": "#1b1b23",
+                        "outline-variant": "#464554",
+                        "inverse-on-surface": "#303038",
+                        "primary": "#c0c1ff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "on-tertiary-container": "#452000",
+                        "surface": "#13131b",
+                        "inverse-surface": "#e4e1ed",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "outline": "#908fa0",
+                        "on-primary-container": "#0d0096",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface-container-high": "#292932",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0d0d15",
+                        "on-primary-fixed": "#07006c",
+                        "on-secondary": "#3c0091",
+                        "on-tertiary-fixed": "#301400",
+                        "secondary-container": "#571bc1",
+                        "secondary": "#d0bcff",
+                        "surface-tint": "#c0c1ff",
+                        "on-tertiary": "#4f2500",
+                        "tertiary": "#ffb783",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e9ddff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit-xs": "4px",
+                        "unit-xl": "48px",
+                        "margin-mobile": "20px",
+                        "unit-sm": "8px",
+                        "container-max": "1280px",
+                        "unit-lg": "24px",
+                        "unit-md": "16px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Poppins"],
+                        "display-lg-mobile": ["Poppins"],
+                        "body-md": ["Inter"],
+                        "code-block": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Poppins"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "code-block": ["14px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(19, 19, 27, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .indigo-glow-hover:hover {
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+        }
+        .terminal-header {
+            background: linear-gradient(to bottom, #2a2a35, #1f1f27);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent truncate pr-4">
+                BTech Portfolio
+            </div>
+<nav class="hidden md:flex space-x-unit-lg items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-DEFAULT font-label-caps text-label-caps" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-DEFAULT font-label-caps text-label-caps" href="projects.html">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-DEFAULT font-label-caps text-label-caps" href="certificates.html">Certificates</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-DEFAULT font-label-caps text-label-caps" href="skills.html">Skills</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-DEFAULT font-label-caps text-label-caps" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-3 py-2 rounded-DEFAULT font-label-caps text-label-caps" href="contact.html">Contact</a>
+</nav>
+<div class="flex items-center space-x-unit-sm">
+<button class="scale-95 active:scale-90 transition-transform p-2 rounded-full text-primary hover:bg-primary-container/10 hidden md:flex">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dark_mode</span>
+</button>
+<button class="scale-95 active:scale-90 transition-transform p-2 rounded-full text-primary hover:bg-primary-container/10 hidden md:flex">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">description</span>
+</button>
+<a class="scale-95 active:scale-90 transition-transform bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 rounded-lg hover:shadow-[0_0_15px_rgba(192,193,255,0.4)] transition-all uppercase tracking-wider font-semibold" href="contact.html">
+                    Hire Me
+                </a>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-32 pb-unit-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full space-y-unit-xl">
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-4 relative group order-2 lg:order-1 mt-unit-lg lg:mt-0">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-75 opacity-50 group-hover:opacity-80 transition-opacity duration-700"></div>
+<div class="glass-panel rounded-xl overflow-hidden relative z-10 aspect-square transform transition-transform duration-500 hover:scale-[1.02]">
+<img class="w-full h-full object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" data-alt="A highly professional and modern portrait of an ambitious BTech engineering student in a sleek, dimly lit environment representing a command center. The lighting is dramatic, featuring a subtle indigo glow that highlights their focused expression. The background incorporates faint, abstract digital patterns or code snippets on dark glass surfaces, reinforcing the high-fidelity technical engineering theme. The mood is precise, innovative, and deeply technical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDObbp7pJF1-wtLSzwv_qNm5hbacbEgl93-kJXBbwsoO8nmlYW1I0SNJq-mQYbNSIF3IjLr8pK1uAC-8-VI1G4u-Sv4Vs8KF7XDGUO4Ys3LxB-Pny5H5LFic-zcnb216JuLX9Z0n4TYAEo9IkHuIqgzWopvXqhaydqwyIGOx9gJ8ov92tRk9CTyctlxm-udTyg5c0366oxsuZIz33nHTbqbIHHNFgG_ftB5BHqymslwDsOgAS5tvmeB5jvSZ3Pw21PvZUHwn61YWCA">
+</div>
+<div class="absolute -bottom-4 -right-4 lg:-right-8 z-20 bg-surface-container border border-outline-variant/30 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg backdrop-blur-md">
+<span class="w-3 h-3 rounded-full bg-[#10B981] animate-pulse shadow-[0_0_10px_#10B981]"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Available for Hire</span>
+</div>
+</div>
+<div class="lg:col-span-8 lg:pl-12 order-1 lg:order-2 space-y-6">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg bg-gradient-to-br from-inverse-surface to-on-surface-variant bg-clip-text text-transparent">
+                    Architecting digital solutions with precision.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    I am a senior BTech student specializing in full-stack development and system architecture. My approach marries academic rigor with pragmatic engineering, focusing on scalable, high-performance applications built on robust foundations. I believe elegant code is an artifact of clear thinking.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="flex items-center gap-2 bg-primary/10 border border-primary/30 text-primary px-6 py-3 rounded-lg font-label-caps text-label-caps hover:bg-primary/20 transition-colors uppercase" href="resume.html">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Download Resume
+                    </a>
+<a class="flex items-center gap-2 glass-panel text-on-surface px-6 py-3 rounded-lg font-label-caps text-label-caps hover:bg-surface-bright transition-colors uppercase" href="contact.html">
+<span class="material-symbols-outlined text-sm">mail</span>
+                        Get in Touch
+                    </a>
+</div>
+</div>
+</section>
+<section class="space-y-8">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">school</span>
+                Academic Trajectory
+            </h2>
+<div class="relative pl-6 md:pl-8 border-l border-outline-variant/30 space-y-12">
+<div class="relative">
+<div class="absolute -left-[29px] md:-left-[37px] top-1 w-4 h-4 rounded-full bg-background border-2 border-primary z-10 shadow-[0_0_10px_rgba(192,193,255,0.5)]"></div>
+<div class="glass-panel p-6 rounded-xl indigo-glow-hover transition-all duration-300">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+<h3 class="font-display-lg text-xl md:text-2xl text-on-surface">Bachelor of Technology in Computer Science</h3>
+<span class="font-code-block text-code-block text-primary mt-1 md:mt-0">2021 — 2025</span>
+</div>
+<h4 class="font-body-md text-body-md text-on-surface-variant font-medium mb-4">Institute of Technology &amp; Engineering</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                            Focusing on Advanced Data Structures, Cloud Architecture, and Machine Learning. Consistently maintaining a position in the top 5% of the cohort.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-[#06b6d4]/10 text-[#06b6d4] font-code-block text-[12px]">CGPA: 3.8/4.0</span>
+<span class="px-3 py-1 rounded-full bg-[#06b6d4]/10 text-[#06b6d4] font-code-block text-[12px]">Dean's List</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-8">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">terminal</span>
+                Engineering Experience
+            </h2>
+<div class="relative pl-6 md:pl-8 border-l border-outline-variant/30 space-y-12">
+<div class="relative">
+<div class="absolute -left-[29px] md:-left-[37px] top-1 w-4 h-4 rounded-full bg-background border-2 border-outline z-10"></div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 shadow-lg">
+<div class="terminal-header px-4 py-2 flex items-center gap-2 border-b border-outline-variant/30">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+<div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+<div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+</div>
+<span class="ml-4 font-code-block text-[12px] text-on-surface-variant/70">guest@portfolio:~/experience/internship</span>
+</div>
+<div class="p-6">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+<h3 class="font-display-lg text-xl text-on-surface">Software Engineering Intern</h3>
+<span class="font-code-block text-code-block text-primary mt-1 md:mt-0">Summer 2024</span>
+</div>
+<h4 class="font-body-md text-body-md text-on-surface-variant font-medium mb-4">TechNova Solutions</h4>
+<ul class="space-y-3 font-code-block text-code-block text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="text-primary mt-1">&gt;</span>
+<span class="">Engineered a scalable microservice using Node.js and Docker, reducing API response latency by 30%.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary mt-1">&gt;</span>
+<span class="">Implemented automated CI/CD pipelines via GitHub Actions, accelerating deployment cycles.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-8">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">hub</span>
+                Core Interests &amp; Capabilities
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="glass-panel p-6 rounded-xl indigo-glow-hover transition-all duration-300 transform hover:-translate-y-1">
+<span class="material-symbols-outlined text-4xl text-primary mb-4 block" style="font-variation-settings: 'FILL' 0;">dns</span>
+<h3 class="font-display-lg text-xl mb-2">Backend Architecture</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Designing robust APIs and microservices ensuring high availability and fault tolerance.</p>
+</div>
+<div class="glass-panel p-6 rounded-xl indigo-glow-hover transition-all duration-300 transform hover:-translate-y-1">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-4 block" style="font-variation-settings: 'FILL' 0;">memory</span>
+<h3 class="font-display-lg text-xl mb-2">Machine Learning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Applying predictive models and neural networks to solve complex data-driven problems.</p>
+</div>
+<div class="glass-panel p-6 rounded-xl indigo-glow-hover transition-all duration-300 transform hover:-translate-y-1">
+<span class="material-symbols-outlined text-4xl text-[#06b6d4] mb-4 block" style="font-variation-settings: 'FILL' 0;">cloud</span>
+<h3 class="font-display-lg text-xl mb-2">Cloud Infrastructure</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Deploying and managing scalable solutions on AWS and GCP using IaC principles.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 w-full py-unit-xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col space-y-4">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">BTech Portfolio</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">© 2024 Engineering Portfolio. Built with Precision.</p>
+</div>
+<div class="flex flex-col space-y-3">
+<h4 class="font-label-caps text-label-caps text-on-surface mb-2 uppercase tracking-wider">Connect</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">LeetCode</a>
+</div>
+<div class="flex flex-col space-y-3">
+<h4 class="font-label-caps text-label-caps text-on-surface mb-2 uppercase tracking-wider">Legal</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>

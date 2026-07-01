@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-on-surface font-body antialiased; }
+  * { @apply border-outline-variant/20; }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface/40 backdrop-blur-xl border border-white/10;
+  }
+  .glass-card {
+    background: rgba(26, 32, 44, 0.85);
+    backdrop-filter: blur(10px);
+    @apply border border-white/10 rounded-lg;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  .glow-indigo {
+    box-shadow: 0 0 30px rgba(192, 193, 255, 0.2);
+  }
+  .skeleton-shimmer {
+    background: linear-gradient(90deg, #1a202c 25%, #252d3d 50%, #1a202c 75%);
+    background-size: 800px 100%;
+    @apply animate-shimmer;
+  }
+  .nav-link {
+    @apply font-mono text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300;
+  }
+  .nav-link-active {
+    @apply text-primary font-semibold border-b-2 border-primary pb-0.5;
+  }
+  .btn-primary {
+    @apply bg-primary text-on-primary font-mono text-xs uppercase tracking-wider px-6 py-3 rounded-lg hover:bg-primary-light transition-all duration-300 flex items-center gap-2 font-semibold;
+  }
+  .btn-outline {
+    @apply glass-panel text-primary font-mono text-xs uppercase tracking-wider px-6 py-3 rounded-lg hover:bg-primary/10 transition-all duration-300 flex items-center gap-2;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { @apply bg-background; }
+::-webkit-scrollbar-thumb { @apply bg-outline-variant rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-primary/50; }
+
+/* Page transition */
+.page-enter { opacity: 0; transform: translateY(16px); }
+.page-enter-active { opacity: 1; transform: translateY(0); transition: all 0.3s ease; }
+.page-exit { opacity: 1; }
+.page-exit-active { opacity: 0; transition: opacity 0.2s ease; }

@@ -1,0 +1,378 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Research &amp; Publications - BTech Portfolio</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-secondary-container": "#c4abff",
+                        "on-surface": "#e4e1ed",
+                        "error-container": "#93000a",
+                        "surface-bright": "#393841",
+                        "on-primary": "#1000a9",
+                        "on-surface-variant": "#c7c4d7",
+                        "surface-variant": "#34343d",
+                        "on-background": "#e4e1ed",
+                        "inverse-primary": "#494bd6",
+                        "tertiary-fixed": "#ffdcc5",
+                        "background": "#13131b",
+                        "error": "#ffb4ab",
+                        "primary-container": "#8083ff",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-secondary-fixed": "#23005c",
+                        "tertiary-container": "#d97721",
+                        "surface-container": "#1f1f27",
+                        "surface-container-highest": "#34343d",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-dim": "#13131b",
+                        "surface-container-low": "#1b1b23",
+                        "outline-variant": "#464554",
+                        "inverse-on-surface": "#303038",
+                        "primary": "#c0c1ff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "on-tertiary-container": "#452000",
+                        "surface": "#13131b",
+                        "inverse-surface": "#e4e1ed",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "outline": "#908fa0",
+                        "on-primary-container": "#0d0096",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface-container-high": "#292932",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0d0d15",
+                        "on-primary-fixed": "#07006c",
+                        "on-secondary": "#3c0091",
+                        "on-tertiary-fixed": "#301400",
+                        "secondary-container": "#571bc1",
+                        "secondary": "#d0bcff",
+                        "surface-tint": "#c0c1ff",
+                        "on-tertiary": "#4f2500",
+                        "tertiary": "#ffb783",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e9ddff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit-xs": "4px",
+                        "unit-xl": "48px",
+                        "margin-mobile": "20px",
+                        "unit-sm": "8px",
+                        "container-max": "1280px",
+                        "unit-lg": "24px",
+                        "unit-md": "16px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Poppins"],
+                        "display-lg-mobile": ["Poppins"],
+                        "body-md": ["Inter"],
+                        "code-block": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Poppins"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "code-block": ["14px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background-color: rgba(19, 19, 27, 0.6); /* surface with opacity */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 30px rgba(192, 193, 255, 0.2); /* primary color glow */
+        }
+        /* Custom scrollbar for modal */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(199, 196, 215, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(199, 196, 215, 0.5); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md selection:bg-primary/30 selection:text-primary">
+<!-- TopNavBar Shared Component -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md border-b border-white/20 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a href="index.html" class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent truncate pr-4">BTech Portfolio</a>
+<!-- Desktop Navigation Links -->
+<div class="hidden md:flex items-center gap-unit-lg"><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-wider" href="index.html">Home</a><a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-caps text-label-caps uppercase tracking-wider" href="projects.html">Projects</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-wider" href="certificates.html">Certificates</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-wider" href="skills.html">Skills</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-wider" href="about.html">About</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-wider" href="contact.html">Contact</a></div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-unit-md">
+<button aria-label="dark_mode" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full text-on-surface-variant hover:bg-primary-container/10 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<a href="resume.html" aria-label="resume" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full text-on-surface-variant hover:bg-primary-container/10 transition-all duration-300 scale-95 active:scale-90"><span class="material-symbols-outlined">description</span></a>
+<a href="contact.html" class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2 rounded-lg hover:shadow-[0_0_20px_rgba(192,193,255,0.4)] transition-all duration-300 scale-95 active:scale-90 uppercase tracking-wide text-center">Hire Me</a>
+</div>
+<!-- Mobile Menu Toggle (Simplified) -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-unit-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Section Header -->
+<header class="mb-unit-xl">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-unit-sm">
+                Research &amp; Publications
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+                Exploring the intersection of deep learning and distributed systems. A collection of peer-reviewed papers, preprints, and academic investigations aimed at advancing robust architectural patterns.
+            </p>
+</header>
+<!-- Research List (Bento/Card Layout) -->
+<div class="flex flex-col gap-unit-lg">
+<!-- Card 1: Published Paper -->
+<article class="glass-panel rounded-xl relative overflow-hidden flex flex-col md:flex-row gap-unit-md p-unit-lg group transition-all duration-300 hover:-translate-y-1 glow-hover">
+<!-- Left Accent Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<!-- Main Content -->
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<!-- Badges -->
+<div class="flex items-center gap-unit-sm mb-unit-sm">
+<span class="bg-primary/10 text-primary font-code-block text-code-block px-3 py-1 rounded-full border border-primary/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">verified</span> Published
+                            </span>
+<span class="text-on-surface-variant font-code-block text-code-block text-sm">2023</span>
+</div>
+<!-- Title & Authors -->
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">
+                            Federated Learning Approaches for Privacy-Preserving IoT Networks
+                        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-1">
+<span class="text-on-surface font-semibold">Alex Chen (Me)</span>, Dr. Sarah Jenkins, Michael O'Connor
+                        </p>
+<p class="font-body-md text-body-md text-tertiary italic mb-unit-md">
+                            IEEE Transactions on Industrial Informatics
+                        </p>
+<!-- Expandable Abstract -->
+<div class="mb-unit-md">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-wide focus:outline-none" onclick="toggleAbstract('abs-1')">
+<span class="">Abstract</span>
+<span class="material-symbols-outlined transition-transform duration-300" id="abs-1-icon">expand_more</span>
+</button>
+<div class="hidden mt-unit-sm font-body-md text-body-md text-on-surface-variant bg-surface-container-low p-unit-md rounded-lg border border-outline-variant/30 leading-relaxed" id="abs-1">
+                                This paper proposes a novel federated learning architecture tailored for resource-constrained Internet of Things (IoT) devices. By implementing a selective weight-sharing mechanism and differential privacy constraints, we demonstrate a 40% reduction in communication overhead while maintaining model accuracy within 2% of centralized baselines. The framework addresses critical vulnerabilities in distributed sensor networks, ensuring data locality and compliance with emerging privacy regulations.
+                            </div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center gap-unit-sm mt-4 md:mt-0 border-t border-outline-variant/20 pt-unit-md">
+<button class="bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 font-label-caps text-label-caps uppercase tracking-wider px-6 py-2.5 rounded-lg flex items-center gap-2 transition-all" onclick="openModal('pdf-modal')">
+<span class="material-symbols-outlined text-[18px]">menu_book</span> Read Paper
+                        </button>
+<a class="text-on-surface-variant hover:text-on-surface border border-outline-variant/30 hover:border-outline-variant/60 font-label-caps text-label-caps uppercase tracking-wider px-4 py-2.5 rounded-lg flex items-center gap-2 transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">link</span> DOI
+                        </a>
+<a class="text-on-surface-variant hover:text-on-surface border border-outline-variant/30 hover:border-outline-variant/60 font-label-caps text-label-caps uppercase tracking-wider px-4 py-2.5 rounded-lg flex items-center gap-2 transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span> arXiv
+                        </a>
+</div>
+</div>
+<!-- Optional Visual/Diagram Placeholder for structural balance -->
+<div class="hidden md:block w-48 shrink-0 relative rounded-lg overflow-hidden border border-white/10 opacity-70 group-hover:opacity-100 transition-opacity">
+<div class="bg-cover bg-center w-full h-full min-h-[150px]" data-alt="A highly detailed conceptual diagram of a federated learning network. Nodes representing IoT devices are connected to a central aggregator via glowing digital lines. The color palette features deep navy blues and bright cyan and indigo accents to indicate data flow. The visual style is modern, technical, and precise, resembling high-fidelity software architecture documentation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhKfGpKErcKRjq9gpdEI7GR3vmXmZwjeBdYWXIBjEMZTa6mrRx0DH9NGzs_r7zVBoA13ZWAcifJwN9ZbMAs7aU1LjJAnKyZurAqUcPBzH3sKqRCzLRdq5OIeZR5sTbx3jNmq-8Ay48VTFhn2cw-x9g1Hl4UeO6M7so2eaMs1-VQXXhNKCsh5EMrb_40NjivVwN741zLUeB8o5AFfw-2F7y_Ma25eLEpoAEC5TRwxHG7OE-K3uFPGG15EnyYnoiNe0n7u8VtE7b2Gg')"></div>
+</div>
+</article>
+<!-- Card 2: Preprint Paper -->
+<article class="glass-panel rounded-xl relative overflow-hidden flex flex-col md:flex-row gap-unit-md p-unit-lg group transition-all duration-300 hover:-translate-y-1 glow-hover">
+<!-- Left Accent Bar (Secondary color for Preprint) -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary"></div>
+<!-- Main Content -->
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<!-- Badges -->
+<div class="flex items-center gap-unit-sm mb-unit-sm">
+<span class="bg-tertiary/10 text-tertiary font-code-block text-code-block px-3 py-1 rounded-full border border-tertiary/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">pending</span> Preprint
+                            </span>
+<span class="text-on-surface-variant font-code-block text-code-block text-sm">2024</span>
+</div>
+<!-- Title & Authors -->
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-tertiary transition-colors">
+                            Optimizing Microservice Latency via Predictive Autoscaling using Transformer Models
+                        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-1">
+<span class="text-on-surface font-semibold">Alex Chen (Me)</span>, David Kim
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-unit-md opacity-80">
+                            Submitted to ACM Symposium on Cloud Computing (SoCC)
+                        </p>
+<!-- Expandable Abstract -->
+<div class="mb-unit-md">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-tertiary transition-colors font-label-caps text-label-caps uppercase tracking-wide focus:outline-none" onclick="toggleAbstract('abs-2')">
+<span class="">Abstract</span>
+<span class="material-symbols-outlined transition-transform duration-300" id="abs-2-icon">expand_more</span>
+</button>
+<div class="hidden mt-unit-sm font-body-md text-body-md text-on-surface-variant bg-surface-container-low p-unit-md rounded-lg border border-outline-variant/30 leading-relaxed" id="abs-2">
+                                Reactive autoscaling in cloud-native microservices often suffers from 'cold start' latency spikes during sudden traffic bursts. We introduce an intelligent scaling orchestrator utilizing a lightweight Transformer-based time-series forecasting model. Evaluated against a simulated Kubernetes cluster running a standard e-commerce benchmark, our predictive approach preemptively scales pods, reducing 99th percentile response times by up to 28% compared to standard CPU-threshold HPA configurations.
+                            </div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center gap-unit-sm mt-4 md:mt-0 border-t border-outline-variant/20 pt-unit-md">
+<button class="bg-tertiary/10 hover:bg-tertiary/20 text-tertiary border border-tertiary/30 font-label-caps text-label-caps uppercase tracking-wider px-6 py-2.5 rounded-lg flex items-center gap-2 transition-all" onclick="openModal('pdf-modal')">
+<span class="material-symbols-outlined text-[18px]">description</span> Read Draft
+                        </button>
+<a class="text-on-surface-variant hover:text-on-surface border border-outline-variant/30 hover:border-outline-variant/60 font-label-caps text-label-caps uppercase tracking-wider px-4 py-2.5 rounded-lg flex items-center gap-2 transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span> arXiv
+                        </a>
+</div>
+</div>
+<!-- Optional Visual/Diagram Placeholder -->
+<div class="hidden md:block w-48 shrink-0 relative rounded-lg overflow-hidden border border-white/10 opacity-70 group-hover:opacity-100 transition-opacity">
+<div class="bg-cover bg-center w-full h-full min-h-[150px]" data-alt="A technical visualization showing a time-series graph predicting cloud server load. The graph features a bright orange prediction line overlaying a subtle blue historical data area. The background is a dark minimalist grid. The style is reminiscent of high-end data analytics dashboard UI elements." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNm3OnlYJZIONXYFhjsTBkTTZY5hJR_NIYkyziwllQbsyxgpCsjipzCOMH2ESCrmS1XDU04MJ9CuM3n6Q-uVvXLEBmm9ylw6pYV2UdraMMgpYQzjGJNPYYPpiyQZndjwujqfwI7SNWcYCuK7t3mlBE2B9aNP3Uy0wtDL_A6mJRWp-BMAKyMB6DrKaffMI4LEjAEtuPmSzQNu1G5ZJhU4IQBTLffAggR7qCnYOxiMo5K86PDNqQ2qe8N_SIgyZGyqRLvEOJPowDtco')"></div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full py-unit-xl bg-surface-container-lowest border-t border-outline-variant/20 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Column -->
+<div class="flex flex-col gap-4">
+<a href="index.html" class="font-display-lg-mobile text-display-lg-mobile text-on-surface">BTech Portfolio</a>
+<p class="font-body-md text-body-md text-tertiary opacity-80">
+                    © 2024 Engineering Portfolio. Built with Precision.
+                </p>
+</div>
+<!-- Links Column -->
+<div class="flex flex-col gap-2 md:col-start-3">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-2">Connect</h4>
+<div class="grid grid-cols-2 gap-2">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">LeetCode</a>
+</div>
+<div class="flex gap-4 mt-4 pt-4 border-t border-outline-variant/20"><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100 uppercase" href="privacy.html">Privacy</a><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100 uppercase" href="terms.html">Terms</a></div>
+</div>
+</div>
+</footer>
+<!-- PDF Modal Overlay -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 md:p-12" id="pdf-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-background/80 backdrop-blur-sm transition-opacity" onclick="closeModal('pdf-modal')"></div>
+<!-- Modal Content (Simulated PDF Viewer) -->
+<div class="relative w-full max-w-5xl h-[870px] bg-surface-container border border-outline-variant/30 rounded-xl shadow-2xl flex flex-col overflow-hidden transform transition-transform scale-100">
+<!-- Modal Header -->
+<div class="flex justify-between items-center p-4 border-b border-outline-variant/30 bg-surface">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">picture_as_pdf</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Paper_Preview.pdf</h3>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1 rounded-full hover:bg-surface-bright" onclick="closeModal('pdf-modal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body (Dummy Content) -->
+<div class="flex-grow bg-surface-container-lowest p-8 overflow-y-auto flex justify-center">
+<div class="w-full max-w-3xl bg-white text-black p-12 shadow-md">
+<!-- Simulating a standard academic paper layout -->
+<div class="text-center mb-8">
+<h1 class="text-2xl font-bold font-serif mb-4">Federated Learning Approaches for Privacy-Preserving IoT Networks</h1>
+<p class="text-sm font-serif mb-1">Alex Chen, Dr. Sarah Jenkins, Michael O'Connor</p>
+<p class="text-xs font-serif italic text-gray-600">Department of Computer Science, State University</p>
+</div>
+<div class="mb-6">
+<h2 class="text-sm font-bold uppercase mb-2">Abstract</h2>
+<p class="text-sm font-serif leading-relaxed text-justify">
+                            This paper proposes a novel federated learning architecture tailored for resource-constrained Internet of Things (IoT) devices. By implementing a selective weight-sharing mechanism and differential privacy constraints, we demonstrate a 40% reduction in communication overhead while maintaining model accuracy within 2% of centralized baselines...
+                        </p>
+</div>
+<div class="grid grid-cols-2 gap-6 text-sm font-serif text-justify leading-relaxed">
+<div>
+<h2 class="font-bold uppercase mb-2">I. Introduction</h2>
+<p class="mb-4">The proliferation of Internet of Things (IoT) devices has led to an exponential increase in data generation at the network edge. Traditional centralized machine learning paradigms require transmitting raw data to cloud servers, raising significant privacy concerns and encountering bandwidth limitations.</p>
+<p class="">Federated Learning (FL) emerges as a promising paradigm to address these challenges by training models locally on client devices and only exchanging model updates.</p>
+</div>
+<div>
+<p class="mb-4">However, applying FL to IoT environments presents unique hurdles, primarily due to the severe resource constraints (compute, memory, battery) of edge devices and the high heterogeneity of data distribution.</p>
+<p class="">In this work, we propose a specialized FL framework that incorporates a lightweight differential privacy mechanism paired with an adaptive compression scheme tailored for intermittent connectivity.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Scripts -->
+<script>
+        function toggleAbstract(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                // Small delay to allow display block to apply before opacity transition if we wanted to animate it
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                const modal = document.getElementById('pdf-modal');
+                if (!modal.classList.contains('hidden')) {
+                    closeModal('pdf-modal');
+                }
+            }
+        });
+    </script>
+
+
+</body></html>

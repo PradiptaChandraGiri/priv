@@ -1,0 +1,275 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BTech Portfolio - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-secondary-container": "#c4abff",
+                        "on-surface": "#e4e1ed",
+                        "error-container": "#93000a",
+                        "surface-bright": "#393841",
+                        "on-primary": "#1000a9",
+                        "on-surface-variant": "#c7c4d7",
+                        "surface-variant": "#34343d",
+                        "on-background": "#e4e1ed",
+                        "inverse-primary": "#494bd6",
+                        "tertiary-fixed": "#ffdcc5",
+                        "background": "#13131b",
+                        "error": "#ffb4ab",
+                        "primary-container": "#8083ff",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-secondary-fixed": "#23005c",
+                        "tertiary-container": "#d97721",
+                        "surface-container": "#1f1f27",
+                        "surface-container-highest": "#34343d",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-dim": "#13131b",
+                        "surface-container-low": "#1b1b23",
+                        "outline-variant": "#464554",
+                        "inverse-on-surface": "#303038",
+                        "primary": "#c0c1ff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "on-tertiary-container": "#452000",
+                        "surface": "#13131b",
+                        "inverse-surface": "#e4e1ed",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "outline": "#908fa0",
+                        "on-primary-container": "#0d0096",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface-container-high": "#292932",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0d0d15",
+                        "on-primary-fixed": "#07006c",
+                        "on-secondary": "#3c0091",
+                        "on-tertiary-fixed": "#301400",
+                        "secondary-container": "#571bc1",
+                        "secondary": "#d0bcff",
+                        "surface-tint": "#c0c1ff",
+                        "on-tertiary": "#4f2500",
+                        "tertiary": "#ffb783",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e9ddff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit-xs": "4px",
+                        "unit-xl": "48px",
+                        "margin-mobile": "20px",
+                        "unit-sm": "8px",
+                        "container-max": "1280px",
+                        "unit-lg": "24px",
+                        "unit-md": "16px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Poppins"],
+                        "display-lg-mobile": ["Poppins"],
+                        "body-md": ["Inter"],
+                        "code-block": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Poppins"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "code-block": ["14px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(31, 31, 39, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .glow-indigo {
+            box-shadow: 0 0 30px rgba(192, 193, 255, 0.2);
+        }
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(192, 193, 255, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(192, 193, 255, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(192, 193, 255, 0); }
+        }
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md dark:bg-background/60 shadow-sm border-b border-white/20 dark:border-outline-variant/30">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a href="index.html" class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">BTech Portfolio</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-caps text-label-caps" href="index.html">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-2 py-1 rounded font-label-caps text-label-caps" href="projects.html">Projects</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-2 py-1 rounded font-label-caps text-label-caps" href="certificates.html">Certificates</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-2 py-1 rounded font-label-caps text-label-caps" href="skills.html">Skills</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-2 py-1 rounded font-label-caps text-label-caps" href="about.html">About</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-2 py-1 rounded font-label-caps text-label-caps" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center gap-unit-md">
+<a href="contact.html" class="hidden md:flex scale-95 active:scale-90 transition-transform bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-caps text-label-caps hover:bg-primary-fixed hover:glow-indigo transition-all duration-300">Hire Me</a>
+<div class="flex gap-2">
+<button class="scale-95 active:scale-90 transition-transform text-on-surface-variant hover:text-primary hover:bg-primary-container/10 p-2 rounded-full transition-all duration-300"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dark_mode</span></button>
+<a href="resume.html" class="scale-95 active:scale-90 transition-transform text-on-surface-variant hover:text-primary hover:bg-primary-container/10 p-2 rounded-full transition-all duration-300"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span></a>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-40 blur-3xl mix-blend-screen pointer-events-none">
+
+</div>
+<div class="relative z-10 max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center w-full">
+<div class="flex flex-col gap-unit-lg order-2 md:order-1 text-center md:text-left">
+<div class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 w-fit mx-auto md:mx-0 font-code-block text-code-block">
+<span class="material-symbols-outlined text-sm align-middle mr-1">terminal</span> System.out.println("Hello, World!");
+                </div>
+<div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-2">Alex <span class="text-primary">Chen</span></h1>
+<h2 class="font-headline-md text-headline-md text-on-surface-variant mb-4 typing-cursor h-8" id="typing-text">Full Stack Dev</h2>
+<p class="font-body-lg text-body-lg text-outline max-w-xl">
+                        Computer Science Engineering student specializing in scalable web architectures and machine learning integrations. Turning complex algorithms into elegant, user-centric solutions.
+                    </p>
+</div>
+<div class="flex gap-gutter justify-center md:justify-start glass-panel rounded-xl p-4 w-fit mx-auto md:mx-0">
+<div class="text-center px-4 border-r border-outline-variant/30">
+<div class="font-headline-md text-headline-md text-primary">12+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Projects</div>
+</div>
+<div class="text-center px-4 border-r border-outline-variant/30">
+<div class="font-headline-md text-headline-md text-tertiary">5</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Certificates</div>
+</div>
+<div class="text-center px-4">
+<div class="font-headline-md text-headline-md text-secondary">3.9</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">CGPA</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 justify-center md:justify-start">
+<a href="projects.html" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-caps text-label-caps hover:bg-primary-fixed glow-indigo transition-all duration-300 flex items-center gap-2">View My Work <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<a href="resume.html" class="glass-panel text-primary px-6 py-3 rounded-lg font-label-caps text-label-caps hover:bg-primary/10 transition-all duration-300 flex items-center gap-2">Download Resume <span class="material-symbols-outlined text-sm">download</span></a>
+</div>
+</div>
+<div class="order-1 md:order-2 flex justify-center items-center relative">
+<div class="w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-primary to-secondary pulse-ring">
+<img alt="Profile Picture" class="w-full h-full rounded-full object-cover border-4 border-surface" data-alt="A professional headshot of a young software engineer in a modern, dark-themed office setting with subtle indigo lighting. They are wearing casual professional attire, looking confidently at the camera. The background features blurred monitors displaying code, conveying a high-tech, innovative atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz0BGDMuQHjqWjgKuEKMBm-r1VhMpTj_1PoIHgO2okPP8V8q57vUDKOSdicuF_5dZs2fJFgQMUxM-WAkN2cbDv2PPdQ2gbxBL6PQeyeT8_IiN5b0JpVKjfSz-723F3KhgVLexVSQgxMuXm2h0IMkUNdyCG7Nj5JBS7-E0UKCTb1B14Pm1Z4T9ShpGLJzzjwt7w-PGR1H0ljrbpyg2YFBwvk2yT3cqESuPdaZBk0YivyZgDKH8RTjeDbVib0EmKEoDT7PfIdq4fcnU">
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Preview Section -->
+<section class="py-unit-xl px-margin-mobile md:px-margin-desktop bg-surface-container-low border-y border-outline-variant/20">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-unit-lg text-center">Tech Stack</h2>
+<div class="flex flex-wrap justify-center gap-3">
+<div class="glass-panel px-4 py-2 rounded-full flex items-center gap-2 hover:-translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary">javascript</span>
+<span class="font-code-block text-code-block text-primary">JavaScript (ES6+)</span>
+</div>
+<div class="glass-panel px-4 py-2 rounded-full flex items-center gap-2 hover:-translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-secondary">database</span>
+<span class="font-code-block text-code-block text-secondary">PostgreSQL</span>
+</div>
+<div class="glass-panel px-4 py-2 rounded-full flex items-center gap-2 hover:-translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-tertiary">code</span>
+<span class="font-code-block text-code-block text-tertiary">React &amp; Tailwind</span>
+</div>
+<div class="glass-panel px-4 py-2 rounded-full flex items-center gap-2 hover:-translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<span class="font-code-block text-code-block text-primary">Node.js</span>
+</div>
+<div class="glass-panel px-4 py-2 rounded-full flex items-center gap-2 hover:-translate-y-1 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-secondary">memory</span>
+<span class="font-code-block text-code-block text-secondary">Python &amp; ML</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-unit-xl border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto items-center">
+<a href="index.html" class="font-display-lg-mobile text-display-lg-mobile text-on-surface text-center md:text-left">BTech Portfolio</a>
+<div class="font-body-md text-body-md text-tertiary dark:text-tertiary-fixed text-center">
+                © 2024 Engineering Portfolio. Built with Precision.
+            </div>
+<div class="flex justify-center md:justify-end gap-4 font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple typing effect for role
+        const roles = ["Full Stack Developer", "ML Enthusiast", "System Architect"];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+
+        function typeEffect() {
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                typingElement.innerText = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.innerText = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500; // Pause before typing next
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        setTimeout(typeEffect, 1000);
+    </script>
+
+
+</body></html>

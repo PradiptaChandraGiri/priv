@@ -1,0 +1,315 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Resume - BTech Portfolio</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-secondary-container": "#c4abff",
+                        "on-surface": "#e4e1ed",
+                        "error-container": "#93000a",
+                        "surface-bright": "#393841",
+                        "on-primary": "#1000a9",
+                        "on-surface-variant": "#c7c4d7",
+                        "surface-variant": "#34343d",
+                        "on-background": "#e4e1ed",
+                        "inverse-primary": "#494bd6",
+                        "tertiary-fixed": "#ffdcc5",
+                        "background": "#13131b",
+                        "error": "#ffb4ab",
+                        "primary-container": "#8083ff",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-secondary-fixed": "#23005c",
+                        "tertiary-container": "#d97721",
+                        "surface-container": "#1f1f27",
+                        "surface-container-highest": "#34343d",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-dim": "#13131b",
+                        "surface-container-low": "#1b1b23",
+                        "outline-variant": "#464554",
+                        "inverse-on-surface": "#303038",
+                        "primary": "#c0c1ff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "on-tertiary-container": "#452000",
+                        "surface": "#13131b",
+                        "inverse-surface": "#e4e1ed",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "outline": "#908fa0",
+                        "on-primary-container": "#0d0096",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface-container-high": "#292932",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0d0d15",
+                        "on-primary-fixed": "#07006c",
+                        "on-secondary": "#3c0091",
+                        "on-tertiary-fixed": "#301400",
+                        "secondary-container": "#571bc1",
+                        "secondary": "#d0bcff",
+                        "surface-tint": "#c0c1ff",
+                        "on-tertiary": "#4f2500",
+                        "tertiary": "#ffb783",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e9ddff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit-xs": "4px",
+                        "unit-xl": "48px",
+                        "margin-mobile": "20px",
+                        "unit-sm": "8px",
+                        "container-max": "1280px",
+                        "unit-lg": "24px",
+                        "unit-md": "16px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Poppins"],
+                        "display-lg-mobile": ["Poppins"],
+                        "body-md": ["Inter"],
+                        "code-block": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Poppins"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "code-block": ["14px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Base Glassmorphism Effects */
+        .glass-panel {
+            background: rgba(31, 31, 39, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Print Optimization */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .dark body {
+                background: white !important;
+                color: black !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .resume-container {
+                box-shadow: none !important;
+                border: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                background: white !important;
+                width: 100% !important;
+                max-width: none !important;
+            }
+            * {
+                color: black !important;
+                background-color: transparent !important;
+                border-color: #ccc !important;
+                text-shadow: none !important;
+                box-shadow: none !important;
+            }
+            a {
+                text-decoration: underline;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/20 dark:border-outline-variant/30 shadow-sm bg-surface/60 backdrop-blur-md dark:bg-background/60 no-print">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a href="index.html" class="font-display-lg-mobile text-display-lg-mobile bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">BTech Portfolio</a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center space-x-unit-lg font-label-caps text-label-caps"><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md duration-300" href="index.html">Home</a><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md duration-300" href="projects.html">Projects</a><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md duration-300" href="certificates.html">Certificates</a><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md duration-300" href="skills.html">Skills</a><a class="text-primary font-bold border-b-2 border-primary pb-1 px-3 py-2" href="about.html">About</a><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md duration-300" href="contact.html">Contact</a></div>
+<!-- Actions -->
+<div class="flex items-center space-x-unit-md">
+<button class="hidden md:flex text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-weight="regular">dark_mode</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-weight="regular">description</span>
+</button>
+<a href="contact.html" class="hidden md:block bg-inverse-primary text-on-primary font-label-caps text-label-caps px-6 py-2 rounded-lg scale-95 active:scale-90 transition-transform glow-effect text-center">Hire Me</a>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-24 pb-unit-xl px-margin-mobile md:px-margin-desktop">
+<!-- Action Bar -->
+<div class="max-w-4xl mx-auto mb-unit-lg flex justify-between items-center glass-panel p-4 rounded-xl no-print">
+<h2 class="font-headline-md text-headline-md text-primary">Resume Document</h2>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 border border-primary text-primary font-label-caps text-label-caps px-4 py-2 rounded-lg hover:bg-primary/10 transition-colors" onclick="window.print()">
+<span class="material-symbols-outlined text-sm">print</span>
+                    Print
+                </button>
+<button class="flex items-center gap-2 bg-inverse-primary text-on-primary font-label-caps text-label-caps px-4 py-2 rounded-lg hover:bg-inverse-primary/90 transition-colors glow-effect">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Download PDF
+                </button>
+</div>
+</div>
+<!-- Resume HTML Document -->
+<article class="resume-container max-w-4xl mx-auto bg-surface-container border border-outline-variant/30 rounded-xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+<!-- Decorative accent for digital view -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-tertiary no-print"></div>
+<!-- Header Section -->
+<header class="border-b border-outline-variant/30 pb-6 mb-8 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6">
+<div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary uppercase tracking-tight">Alex Mercer</h1>
+<p class="font-headline-md text-headline-md text-tertiary mt-2">Software Systems Engineer</p>
+</div>
+<div class="flex flex-col gap-2 font-body-md text-body-md text-on-surface-variant items-center md:items-end">
+<a class="flex items-center gap-2 hover:text-primary transition-colors" href="mailto:alex.mercer@example.com">
+<span class="material-symbols-outlined text-sm">mail</span> alex.mercer@example.com
+                    </a>
+<a class="flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com">
+<span class="material-symbols-outlined text-sm">code</span> github.com/alexmercer
+                    </a>
+<a class="flex items-center gap-2 hover:text-primary transition-colors" href="https://linkedin.com">
+<span class="material-symbols-outlined text-sm">link</span> linkedin.com/in/alexmercer
+                    </a>
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span> San Francisco, CA
+                    </span>
+</div>
+</header>
+<!-- Education Section -->
+<section class="mb-10">
+<h2 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant/20 pb-2 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">school</span> Education
+                </h2>
+<div class="flex flex-col md:flex-row justify-between mb-2">
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">University of Technology</h3>
+<p class="font-body-md text-body-md text-on-surface-variant italic">Bachelor of Technology in Computer Science</p>
+</div>
+<div class="text-right mt-2 md:mt-0">
+<p class="font-code-block text-code-block text-tertiary">Aug 2020 - May 2024</p>
+<p class="font-body-md text-body-md text-on-surface-variant">GPA: 3.9/4.0</p>
+</div>
+</div>
+<ul class="list-disc list-inside font-body-md text-body-md text-on-surface-variant ml-4 space-y-1">
+<li class="">Dean's List 2021-2023</li>
+<li class="">Relevant Coursework: Data Structures, Algorithms, Distributed Systems, Machine Learning</li>
+</ul>
+</section>
+<!-- Experience Section -->
+<section class="mb-10">
+<h2 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant/20 pb-2 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">work</span> Experience
+                </h2>
+<!-- Job 1 -->
+<div class="mb-6">
+<div class="flex flex-col md:flex-row justify-between mb-2">
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">TechSolutions Inc.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant italic">Software Engineering Intern</p>
+</div>
+<div class="text-right mt-2 md:mt-0">
+<p class="font-code-block text-code-block text-tertiary">May 2023 - Aug 2023</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Seattle, WA</p>
+</div>
+</div>
+<ul class="list-disc list-outside font-body-md text-body-md text-on-surface-variant ml-6 space-y-2">
+<li class="">Developed a microservice using Go and gRPC that improved data ingestion speed by 40%.</li>
+<li class="">Implemented robust unit and integration tests, achieving 95% code coverage across the module.</li>
+<li class="">Collaborated with the DevOps team to streamline CI/CD pipelines using GitHub Actions and Docker.</li>
+</ul>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="mb-10">
+<h2 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant/20 pb-2 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">integration_instructions</span> Projects
+                </h2>
+<!-- Project 1 -->
+<div class="mb-6">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">Distributed Key-Value Store</h3>
+<div class="flex gap-2 mt-2 md:mt-0 no-print">
+<span class="bg-cyan-500/10 text-cyan-400 font-code-block text-[10px] px-2 py-1 rounded-full border border-cyan-500/20">C++</span>
+<span class="bg-cyan-500/10 text-cyan-400 font-code-block text-[10px] px-2 py-1 rounded-full border border-cyan-500/20">Raft</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">
+                        Designed and implemented a fault-tolerant key-value store utilizing the Raft consensus algorithm, capable of handling node failures and network partitions while maintaining strong consistency.
+                    </p>
+</div>
+</section>
+<!-- Skills Section -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant/20 pb-2 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">build</span> Technical Skills
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-body-md text-body-md text-on-surface-variant">
+<div class="">
+<strong class="text-on-surface">Languages:</strong> C++, Python, JavaScript/TypeScript, Go, Java
+                    </div>
+<div class="">
+<strong class="text-on-surface">Frameworks:</strong> React, Node.js, Express, Tailwind CSS
+                    </div>
+<div class="">
+<strong class="text-on-surface">Tools/Platforms:</strong> Git, Docker, Kubernetes, AWS (EC2, S3), Linux
+                    </div>
+<div class="">
+<strong class="text-on-surface">Databases:</strong> PostgreSQL, MongoDB, Redis
+                    </div>
+</div>
+</section>
+</article>
+</main>
+<!-- Footer -->
+<footer class="w-full py-unit-xl border-t border-outline-variant/20 bg-surface-container-lowest dark:bg-surface-container-lowest no-print">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a href="index.html" class="font-display-lg-mobile text-display-lg-mobile text-on-surface">BTech Portfolio</a>
+<div class="flex flex-col space-y-2 font-body-md text-body-md text-tertiary dark:text-tertiary-fixed">
+<p class="">© 2024 Engineering Portfolio. Built with Precision.</p>
+</div>
+<div class="flex flex-wrap gap-4 font-label-caps text-label-caps"><a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="https://github.com">GitHub</a><a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="https://linkedin.com">LinkedIn</a><a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a><a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">LeetCode</a><a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a><a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Terms</a></div>
+</div>
+</footer>
+
+
+</body></html>
